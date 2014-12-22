@@ -8,7 +8,8 @@ Goals
     - Resource Tiles
     - Trading Tiles
 2. Buidling Class and Subclasses
-3. Player Stat Interface\
+3. Map Recognition
+3. Player Stat Interface
 4. Random Generation
 5. Game Start/End
 6. Theif Mechanics
