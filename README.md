@@ -3,6 +3,26 @@ FinalProject1
 
 Settlers Of Catan
 
+20150105
+- Associating resource tiles with direction numbers to detail "coordinates" of buildings (resource tile #, direction #)
+-map created by offsetting rows
+    MAP: 5 rows x 9 columns
+    _ _ _ _ _ _ _ _ _
+    _ _ O _ O _ O _ _
+    _ _ _ _ _ _ _ _ _
+    _ O _ O _ O _ O _
+    _ _ _ _ _ _ _ _ _
+    O _ O _ O _ O _ O
+    _ _ _ _ _ _ _ _ _
+    _ O _ O _ O _ O _
+    _ _ _ _ _ _ _ _ _
+    _ _ O _ O _ O _ _
+    _ _ _ _ _ _ _ _ _
+    --where O are the tiles; rows w/o any Os are for buildings only, row w/ Os are for tiles only
+    --check overlap by top 3 tiles above and below buildings
+    offset/move over from beginning by 5-(number of tiles in the row)
+
+
 Goals
 1. Tile Class and Subclasses
     - Resource Tiles
