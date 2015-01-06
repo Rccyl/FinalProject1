@@ -1,5 +1,7 @@
+import java.util.*;
+
 public class Buildings{
-  protected int direction;
-  1=N  
-  2=
+    protected ;
+  
+
 }
