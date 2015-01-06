@@ -1,7 +1,10 @@
 import java.util.*;
 
-public class Buildings{
-    protected ;
-  
+abstract class Buildings{
+    protected int[] cost;// (lumber, grain, wool, brick)
+    protected int color;
 
+    
+
+    abstract check();
 }
