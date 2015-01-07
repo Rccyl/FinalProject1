@@ -3,8 +3,10 @@ FinalProject1
 
 Settlers Of Catan
 
-2015-01-06
-https://www.dropbox.com/s/c9hyuxkinlvh848/Photo%20Jan%2005%2C%203%2019%2057%20PM.png?dl=0
+2015-01-07:  https://www.dropbox.com/s/pik1ibon5hoo9fn/Photo%20Jan%2007%2C%208%2017%2023%20AM.png?dl=0
+
+2015-01-06 : https://www.dropbox.com/s/c9hyuxkinlvh848/Photo%20Jan%2005%2C%203%2019%2057%20PM.png?dl=0
+
 2015-01-05
 - Associating resource tiles with direction numbers to detail "coordinates" of buildings (resource tile #, direction #)
 -map created by offsetting rows
