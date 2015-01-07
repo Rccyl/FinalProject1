@@ -5,7 +5,7 @@ import
 public class Game_Files{
     
     protected Object[][] cityMap;
-    protected object[][] roadMap;
+    protected Object[][] roadMap;
     
     public Game_Files(){
         cityMap = new Object[11][11];
