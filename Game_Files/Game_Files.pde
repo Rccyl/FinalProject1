@@ -8,7 +8,7 @@ class Game_Files{
     protected Object[][] roadMap;
     
     Game_Files(){
-        islandProduction= new int[5];
+        islandProduction = { 3 3 3 3 2};
         cityMap = new Object[11][11];
         setTiles(cityMap;1);
         setFacilities();
@@ -21,18 +21,19 @@ class Game_Files{
         for(int i=1;i<11;i+=2){
           j=k*abs(((5-i)/2)+1)
           map[i][j]= makeTile();
-          updateProduction(map[i][j]);
         }
     }
     
     Tiles makeTile(){
         Tiles tile = new Tiles;
         if(islandProduction[tile.getProduction]>0){
+           islandProduction[tile.getProduction]--;
            return tile;
         } else{
            makeTile();
         }
     }
+
 
 
 }
