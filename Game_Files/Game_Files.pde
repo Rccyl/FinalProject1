@@ -3,7 +3,7 @@ import java.util*;
 
 class Game_Files{
     
-    protected int[] islandProduction;
+    protected int[] unspentProduction;
     protected Object[][] cityMap;
     protected Object[][] roadMap;
     
@@ -21,11 +21,19 @@ class Game_Files{
         for(int i=1;i<11;i+=2){
           j=k*abs(((5-i)/2)+1)
           map[i][j]= makeTile();
-          addProduction(map[i][j]);
+          updateProduction(map[i][j]);
         }
     }
     
     Tiles makeTile(){
-        while
-          
+        Tiles tile = new Tiles;
+        if(islandProduction[tile.getProduction]>0){
+           return tile;
+        } else{
+           makeTile();
+        }
+    }
+
+
+}
          
