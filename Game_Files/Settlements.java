@@ -9,9 +9,7 @@ public class Settlements extends Facilities{
 	setCost(1,1,0,0,0);
 	setColor(255,0,0);
     }
-
-    public boolean check(){
-
-    }
+    
+    //check function inherited from facilities
 
 }

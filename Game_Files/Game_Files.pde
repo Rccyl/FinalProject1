@@ -1,4 +1,3 @@
-
 import java.util*;
 
 class Game_Files{
@@ -34,7 +33,18 @@ class Game_Files{
         }
     }
 
-
+    boolean check(Object facility,int x, int y){
+       Object thing= cityMap[x][y];
+       String thingName=thing.getClass().getSimpleName(); //what is already there
+       String putThingName=facility.getClass().getSimpleName(); //what you want to put
+       String[] classes={"Settlement","Cities","Facilities"};
+       if (thingName==null || Arrays.asList(classes).contains(thingName){
+          return false;
+       } 
+       else{
+           return true; //and maybe do something with facility; change class name of tile at that point? 
+       }
+    }
 
 }
          

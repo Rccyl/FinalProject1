@@ -31,5 +31,5 @@ abstract class Buildings{
 	color[2]=blue;
     }
 
-    abstract boolean check();
+    //abstract boolean check(int x, int y);
 }
