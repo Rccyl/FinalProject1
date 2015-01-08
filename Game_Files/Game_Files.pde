@@ -1,13 +1,14 @@
 
 import java.util*;
-import 
 
-public class Game_Files{
+class Game_Files{
     
+    protected int[] islandProduction;
     protected Object[][] cityMap;
     protected Object[][] roadMap;
     
-    public Game_Files(){
+    Game_Files(){
+        islandProduction= new int[5];
         cityMap = new Object[11][11];
         setTiles(cityMap;1);
         setFacilities();
@@ -16,6 +17,15 @@ public class Game_Files{
         setRoads();
     }
     
-    public setTiles(Object[][] map;int k){
+    void setTiles(Object[][] map;int k){
         for(int i=1;i<11;i+=2){
+          j=k*abs(((5-i)/2)+1)
+          map[i][j]= makeTile();
+          addProduction(map[i][j]);
+        }
+    }
+    
+    Tiles makeTile(){
+        while
+          
          
