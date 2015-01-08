@@ -3,6 +3,10 @@ FinalProject1
 
 Settlers Of Catan
 
+
+2015-01-08:
+    Equation for Tile Placement: k*(abs((5-i)/2)+1)
+
 2015-01-07:  
     Sprite Programming Ref (for coders): https://sites.google.com/site/javagamescorner/home/creating-sprites
     Map Outline:https://www.dropbox.com/s/pik1ibon5hoo9fn/Photo%20Jan%2007%2C%208%2017%2023%20AM.png?dl=0
