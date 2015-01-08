@@ -16,7 +16,7 @@ public class Tiles{
     }
    
   public int[] getProduction(){
-    return production;
+    return (index of 1)
     }
   
 }
