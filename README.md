@@ -10,6 +10,7 @@ Settlers Of Catan
     - *add and commit files*
     -git pull origin master
     -git push origin master (and enter user and pass)
+    (Source: http://stackoverflow.com/questions/161813/fix-merge-conflicts-in-git)
 
 2015-01-08:
     Equation for Tile Placement: k*(abs((5-i)/2)+1)
