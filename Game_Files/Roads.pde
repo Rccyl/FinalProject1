@@ -11,8 +11,4 @@ public class Roads extends Buildings{
 	setColor(255,0,0);
     }
 
-    public boolean check(int x, int y){
-
-    }
-
 }

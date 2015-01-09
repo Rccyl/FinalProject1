@@ -13,9 +13,4 @@ public class Facilities extends Buildings{
 	setColor(0,0,255);
     }
 
-    // **** 
-    // **o*    <--(x,y) here is (1,2)
-    // **** 
-
-
 }
