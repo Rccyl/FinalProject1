@@ -42,6 +42,7 @@ class Game_Files{
           return false;
        } 
        else{
+           
            return true; //and maybe do something with facility; change class name of tile at that point? 
        }
     }
