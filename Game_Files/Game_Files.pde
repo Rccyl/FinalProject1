@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //import java.lang.Object;
+=======
+import java.util.*;
+>>>>>>> 0c04115870df333397c4d5837550b2c1f12469aa
 
 class Game_Files{
     
@@ -7,29 +11,26 @@ class Game_Files{
     protected Object[][] roadMap;
     
     Game_Files(){
-        islandProduction = { 3 3 2 3 2 1 };
-        cityMap = new Object[11][11];
-        setTiles(cityMap;1);
-        setFacilities();
-        roadMap = new Object[21][11];
-        setTiles(roadMap;2);
-        setRoads();
+        unspentProduction = new int[];//{3,3,2,3,2,1};
+        cityMap = setTiles(11,11,1);
     }
     
-    void setTiles(Object[][] map;int k){
+    void setTiles(int rows,int cols,int k){
+        Object[][] map = new Object[rows][cols];
         for(int i=1;i<11;i+=2){
-          j=k*abs(((5-i)/2)+1)
+          int j=k*abs(((5-i)/2)+1);
           map[i][j]= makeTile();
         }
     }
     
     Tiles makeTile(){
-        Tiles tile = new Tiles;
-        if(unspentProduction[tile.getProduction]>0)
+        Tiles tile = new Tiles();
+        if(unspentProduction[tile.getProduction]>0){
            unspentProduction[tile.getProduction]--;
            return tile;
         } else{
            makeTile();
+           return null;
         }
     }
 
