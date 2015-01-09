@@ -2,7 +2,7 @@ import java.util.*;
 
 abstract class Buildings{
     protected int[] cost= new int[5];// (lumber, grain, wool, brick)
-    protected int[] color;// bgm numbers to 255 (red val, green val, blue val)
+    protected int[] paintColor= new int[3];// bgm numbers to 255 (red val, green val, blue val)
 
     public Buildings(){
 	setCost(1,1,1,1,1);
@@ -22,13 +22,13 @@ abstract class Buildings{
     }
 
     public int[] getColor(){
-	return color;
+	return paintColor;
     }
 
     public void setColor(int red, int green, int blue){
-	color[0]=red;
-	color[1]=green;
-	color[2]=blue;
+	paintColor[0]=red;
+	paintColor[1]=green;
+	paintColor[2]=blue;
     }
 
     //abstract boolean check(int x, int y);

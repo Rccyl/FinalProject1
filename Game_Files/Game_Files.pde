@@ -1,4 +1,4 @@
-import java.util*;
+//import java.lang.Object;
 
 class Game_Files{
     
@@ -38,11 +38,11 @@ class Game_Files{
        String thingName=thing.getClass().getSimpleName(); //what is already there
        String putThingName=facility.getClass().getSimpleName(); //what you want to put
        String[] classes={"Settlement","Cities","Facilities"};
-       if (thingName==null || Arrays.asList(classes).contains(thingName){
-          return false;
+       if (thingName==null || Arrays.asList(classes).contains(thingName)){
+           return false;
        } 
        else{
-           
+           cityMap[x][y]= new facility.getClass();
            return true; //and maybe do something with facility; change class name of tile at that point? 
        }
     }
