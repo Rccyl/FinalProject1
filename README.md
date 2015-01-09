@@ -3,6 +3,13 @@ FinalProject1
 
 Settlers Of Catan
 
+2015-01-09: 
+    Fixed Merge Conflict:
+    -git fetch origin
+    -git pull origin master
+    - *add and commit files*
+    -git pull origin master
+    -git push origin master (and enter user and pass)
 
 2015-01-08:
     Equation for Tile Placement: k*(abs((5-i)/2)+1)
