@@ -1,4 +1,4 @@
-import java.until.*;
+import java.util.*;
 
 public class Tiles{
       
@@ -11,7 +11,7 @@ public class Tiles{
     }
     
   public void Tiles(){
-    Random rand=new Random
+    Random rand=new Random();
     biome = rand.nextInt(6);
     }
    
