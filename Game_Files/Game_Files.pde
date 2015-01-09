@@ -1,8 +1,9 @@
-<<<<<<< HEAD
-//import java.lang.Object;
-=======
 import java.util.*;
->>>>>>> 0c04115870df333397c4d5837550b2c1f12469aa
+//importing sprite animation stuff
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
 
 class Game_Files{
     
@@ -44,7 +45,7 @@ class Game_Files{
        } 
        else{
            cityMap[x][y]= new facility.getClass();
-           return true; //and maybe do something with facility; change class name of tile at that point? 
+           return true;
        }
     }
 
