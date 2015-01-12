@@ -8,9 +8,6 @@ Settlers Of Catan
     -changed file name so no nested enclosed issue (http://stackoverflow.com/questions/17379921/processing-java-error-the-nested-type-node-cannot-hide-an-enclosing-type)
     -gave int[] variable dimension, since will always have/need same amount of types of resources (http://stackoverflow.com/questions/18548344/android-customadapter-variable-must-provide-either-dimension-expressions-or-an)
     -edited setTiles so constructor would work
-    
-    TO FIX:
-    -Can't find getProduction method; not sure what 6th resources is????
 
 
 2015-01-09: 
