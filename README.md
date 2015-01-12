@@ -3,6 +3,18 @@ FinalProject1
 
 Settlers Of Catan
 
+2015-01-12:
+    Better starter guide for understanding sprite animation: http://gamedevelopment.tutsplus.com/tutorials/an-introduction-to-spritesheet-animation--gamedev-13099
+    
+    FIXED:
+    -changed file name so no nested enclosed issue (http://stackoverflow.com/questions/17379921/processing-java-error-the-nested-type-node-cannot-hide-an-enclosing-type)
+    -gave int[] variable dimension, since will always have/need same amount of types of resources (http://stackoverflow.com/questions/18548344/android-customadapter-variable-must-provide-either-dimension-expressions-or-an)
+    -edited setTiles so constructor would work
+    
+    TO FIX: how to set up tiles? (makeTile  in setTiles brings up error, not sure yet how to fix)
+        -will add basic sprite animation stuff
+
+
 2015-01-09: 
     Fixed Merge Conflict:
     -git fetch origin
