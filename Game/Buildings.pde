@@ -1,7 +1,7 @@
 import java.util.*;
 
 abstract class Buildings{
-    protected int[] cost= new int[5];// (lumber, grain, wool, brick)
+    protected int[] cost= new int[5];// (lumber, grain, ore, wool, brick, barren)
     protected int[] paintColor= new int[3];// bgm numbers to 255 (red val, green val, blue val)
 
     public Buildings(){

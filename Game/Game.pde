@@ -10,30 +10,46 @@ class Game_Files{
     protected int[] unspentProduction;
     protected Object[][] cityMap;
     protected Object[][] roadMap;
+    protected String[] productionNames= new String[]{"Lumber","Grain","Ore","Wool","Brick","Barren"};
+    Random r=new Random(); //in case some random stuff needed (generating tiles randomly?)
     
     Game_Files(){
-        unspentProduction = new int[];//{3,3,2,3,2,1};
-        cityMap = setTiles(11,11,1);
+        unspentProduction = new int[6];//{3,3,2,3,2,1};
+        setTiles(cityMap,11,11,1);
     }
     
-    void setTiles(int rows,int cols,int k){
-        Object[][] map = new Object[rows][cols];
+    void setTiles(Object map, int rows,int cols,int k){
+        map = new Object[rows][cols];
         for(int i=1;i<11;i+=2){
           int j=k*abs(((5-i)/2)+1);
           map[i][j]= makeTile();
         }
     }
-    
+      
     Tiles makeTile(){
         Tiles tile = new Tiles();
-        if(unspentProduction[tile.getProduction]>0){
-           unspentProduction[tile.getProduction]--;
+        int pickOne=r.nextInt(6);
+        if(unspentProduction[pickOne]>0){
+           unspentProduction[pickOne]--;
            return tile;
         } else{
            makeTile();
            return null;
         }
     }
+
+  //credit for following code: Steven Lambert, "An Introduction to Spritesheet Animation"
+    function SpriteSheet(path, frameWidth, frameHeight) {
+       var image = new Image();
+       var framesPerRow;
+       // calculate the number of frames in a row after the image loads
+       var self = this;
+       image.onload = function() {
+          framesPerRow = Math.floor(image.width / frameWidth);
+       }; 
+       image.src = path;
+    }
+    //and we can set the path to some file in Game folder (change theme or still use elemental stuff?)
 
     //x and y are mousePress coordinates on map
     boolean check(Object e, int x, int y){
