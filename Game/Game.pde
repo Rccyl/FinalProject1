@@ -7,51 +7,59 @@ import java.awt.image.BufferedImage;
 
 class Game_Files{
     
-    protected int[] unspentProduction;
+    protected int[] tileArray=new int[19];
     protected Object[][] cityMap;
     protected Object[][] roadMap;
     protected String[] productionNames= new String[]{"Lumber","Grain","Ore","Wool","Brick","Barren"};
     Random r=new Random(); //in case some random stuff needed (generating tiles randomly?)
     
     Game_Files(){
-        unspentProduction = new int[6];//{3,3,2,3,2,1};
+        composition(3,3,2,3,2,1);
         setTiles(cityMap,11,11,1);
     }
     
+    void composition(int lumber,int grain,int ore,int wool,int brick,int barren){
+        for(int i=0;i<tileArray.length;i++){
+            for(int j=lumber;j>0;j--){
+               tileArray[i]=0;
+               i++;
+            }
+            for(int j=grain;j>0;j--){
+               tileArray[i]=1;
+               i++;
+            }
+            for(int j=ore;j>0;j--){
+               tileArray[i]=2;
+               i++;
+            }
+            for(int j=wool;j>0;j--){
+               tileArray[i]=3;
+               i++;
+            }
+            for(int j=brick;j>0;j--){
+               tileArray[i]=4;
+               i++;
+            }
+            for(int j=barren;j>0;j--){
+               tileArray[i]=5;
+               i++;
+            }
+        }
+    }
+              
+    
     void setTiles(Object map, int rows,int cols,int k){
         map = new Object[rows][cols];
-        for(int i=1;i<11;i+=2){
-          int j=k*abs(((5-i)/2)+1);
-          map[i][j]= makeTile();
-        }
-    }
-      
-    Tiles makeTile(){
-        Tiles tile = new Tiles();
-        int pickOne=r.nextInt(6);
-        if(unspentProduction[pickOne]>0){
-           unspentProduction[pickOne]--;
-           return tile;
-        } else{
-           makeTile();
-           return null;
-        }
-    }
+        for(int t=0;t<tileArray.length;t++){
+            for(int i=1;i<11;i+=2){
+              int j=k*abs(((5-i)/2)+1);
+              map[i][j]=tileArray[t];
+        }  
+      }  
+    }  
+        
 
-  //credit for following code: Steven Lambert, "An Introduction to Spritesheet Animation"
-    function SpriteSheet(path, frameWidth, frameHeight) {
-       var image = new Image();
-       var framesPerRow;
-       // calculate the number of frames in a row after the image loads
-       var self = this;
-       image.onload = function() {
-          framesPerRow = Math.floor(image.width / frameWidth);
-       }; 
-       image.src = path;
-    }
-    //and we can set the path to some file in Game folder (change theme or still use elemental stuff?)
-
-    //x and y are mousePress coordinates on map
+  
     boolean check(Object e, int x, int y){
         String objectName=e.getClass().getSimpleName();
         if (objectName.equals("Facilities")){
