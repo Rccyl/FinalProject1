@@ -22,56 +22,34 @@ class Game_Files{
         map = new Object[rows][cols];
         for(int i=1;i<11;i+=2){
           int j=k*abs(((5-i)/2)+1);
-          map[i][j]= makeTile();
+          //map[i][j]= makeTile();
         }
     }
-      
-    Tiles makeTile(){
-        Tiles tile = new Tiles();
-        int pickOne=r.nextInt(6);
-        if(unspentProduction[pickOne]>0){
-           unspentProduction[pickOne]--;
-           return tile;
-        } else{
-           makeTile();
-           return null;
-        }
-    }
-
-  //credit for following code: Steven Lambert, "An Introduction to Spritesheet Animation"
-    function SpriteSheet(path, frameWidth, frameHeight) {
-       var image = new Image();
-       var framesPerRow;
-       // calculate the number of frames in a row after the image loads
-       var self = this;
-       image.onload = function() {
-          framesPerRow = Math.floor(image.width / frameWidth);
-       }; 
-       image.src = path;
-    }
-    //and we can set the path to some file in Game folder (change theme or still use elemental stuff?)
 
     //x and y are mousePress coordinates on map
     boolean check(Object e, int x, int y){
+        boolean checkThing=true;
         String objectName=e.getClass().getSimpleName();
         if (objectName.equals("Facilities")){
-           checkFacilities(e,x,y); 
+           checkThing=checkFacilities(e,x,y); 
         }
         else if (objectName.equals("Roads")){
-           checkRoads(e,x,y); 
+           checkThing=checkRoads(e,x,y); 
         }
+        return checkThing;
     }
 
     boolean checkFacilities(Object facility,int x, int y){
        Object thing= cityMap[x][y];
        String thingName=thing.getClass().getSimpleName(); //what is already there
        String putThingName=facility.getClass().getSimpleName(); //what you want to put
-       String[] classes={"Settlement","Cities","Facilities"};
+       String[] classes={"Settlement","Cities","Facilities","Trading"};
        if (thingName==null || Arrays.asList(classes).contains(thingName)){
            return false;
        } 
        else{
-           cityMap[x][y]= new facility.getClass();
+           cityMap[x][y]= new Object();
+           // how to get class of facility (facility.getClass() doesn't work)
            return true;
        }
     }
@@ -85,7 +63,8 @@ class Game_Files{
            return false;
        } 
        else{
-           roadMap[x][y]= new road.getClass();
+           roadMap[x][y]= new Object();
+           // how to get class of road (road.getClass() doesn't work)
            return true;
        }
     }
