@@ -18,15 +18,14 @@ class Game_Files{
         setTiles(cityMap,11,11,1);
     }
     
-<<<<<<< HEAD
-    void setTiles(Object map, int rows,int cols,int k){
+    void setTiles(Object[][] map, int rows,int cols,int k){
         map = new Object[rows][cols];
         for(int i=1;i<11;i+=2){
           int j=k*abs(((5-i)/2)+1);
           //map[i][j]= makeTile();
         }
     }
-=======
+
     void composition(int lumber,int grain,int ore,int wool,int brick,int barren){
         for(int i=0;i<tileArray.length;i++){
             for(int j=lumber;j>0;j--){
@@ -62,13 +61,10 @@ class Game_Files{
         for(int t=0;t<tileArray.length;t++){
             for(int i=1;i<11;i+=2){
               int j=k*abs(((5-i)/2)+1);
-              map[i][j]=tileArray[t];
+              //map[i][j]=tileArray[t];
         }  
       }  
-    }  
-        
->>>>>>> 5b77c87af3aacffc1ec896c96821954de251ae0c
-
+    }
   
     boolean check(Object e, int x, int y){
         boolean checkThing=true;
