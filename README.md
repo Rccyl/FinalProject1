@@ -3,6 +3,9 @@ FinalProject1
 
 Settlers Of Catan
 
+2015-01-14:
+    -TO FIX/NOTE: there are two setTile methods--> which one to use?
+
 2015-01-13:
     -began development of map
 
