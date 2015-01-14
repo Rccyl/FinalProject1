@@ -3,6 +3,9 @@ FinalProject1
 
 Settlers Of Catan
 
+2015-01-13:
+    -began development of map
+
 2015-01-12:
     Better starter guide for understanding sprite animation: http://gamedevelopment.tutsplus.com/tutorials/an-introduction-to-spritesheet-animation--gamedev-13099
     
