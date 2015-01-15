@@ -6,7 +6,7 @@ public class Settlements extends Facilities{
     }
     
     public Settlements(){
-	setCost(1,1,0,0,0);
+	setCost(1,1,0,1,0);
 	setColor(255,0,0);
     }
 
