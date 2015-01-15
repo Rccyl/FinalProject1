@@ -7,7 +7,7 @@ PImage barren;
 PImage[] img= new PImage[]{lumber, grain, ore, wool, brick, barren};
 
 protected Tile[] tiles = new Tile[19];
-protected Object[][] cityMap;
+protected Object[][] cityMap= new Object[11][11];
 
 void setup(){  
   size(900,900);
@@ -35,7 +35,7 @@ void setup(){
   barren=loadImage("barren.jpg");
   
   setBiomes(4,4,3,4,3,1);
-  //setTiles();
+  setTiles();
   
   
 }
@@ -87,7 +87,7 @@ void shuffleTiles(){
 }
  
   
-/*
+
 void setTiles(){
   for(int t=0;t<tiles.length;t++){
     for(int i=1;i<11;i+=2){
@@ -96,5 +96,5 @@ void setTiles(){
     }
   }
 }
-*/
+
 
