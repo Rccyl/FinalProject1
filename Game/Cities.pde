@@ -1,12 +1,12 @@
 public class Cities extends Facilities{
     
     public Cities(int rCred, int rCgreen, int rCblue){
-      setCost(1,1,1,1,1);
+      setCost(0,3,2,0,0);
       setColor(rCred,rCgreen,rCblue);
     }
 
     public Cities(){
-      setCost(1,1,1,1,1);
+      setCost(0,3,2,0,0);
       setColor(0,0,255);
     }
     
