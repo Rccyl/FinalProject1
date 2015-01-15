@@ -12,7 +12,7 @@ protected Object[][] roadMap= new Object[11][21];
 
 void setup(){  
   size(900,900);
-  background(255);
+  background(80,160,200);
   for(int i=0;i<3;i++){
     tiles[i]=new Tile(i*80*sqrt(3)+width*1/3,200);
   }
@@ -45,12 +45,13 @@ void draw(){
 
   //image(lumber,0,height/2,lumber.width/2,lumber.height/2);
   
-  background(255);
+  background(80,160,200);
   
   for(int i=0;i<19;i++){
       tiles[i].display();
     }
-
+  
+  
 }
 
 
@@ -87,8 +88,6 @@ void shuffleTiles(){
   }
 }
  
-  
-
 void setTiles(){
   for(int t=0;t<tiles.length;t++){
     for(int i=1;i<11;i+=2){
