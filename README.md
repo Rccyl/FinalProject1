@@ -5,6 +5,7 @@ Settlers Of Catan
 
 2015-01-14:
     -edited map stuff
+    -Tiles now being displayed
     -TO FIX/NOTE: there are two setTile methods--> which one to use?
 
 2015-01-13:
