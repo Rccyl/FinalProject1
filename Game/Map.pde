@@ -78,11 +78,11 @@ void setBiomes2(int i,int id,int resource){
  
 void shuffleTiles(){
   Random rnd = new Random();
-  for (int i = tiles.length - 1; i > 0; i--){
-    int index = rnd.nextInt(i + 1);
-    Tile a = tiles[index];
-    tiles[index] = tiles[i];
-    tiles[i] = a;
+  for (int i=tiles.length-1;i>0;i--){
+    int index=rnd.nextInt(i+1);
+    Tile a=tiles[index];
+    tiles[index]=tiles[i];
+    tiles[i]=a;
   }
 }
  
