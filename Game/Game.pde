@@ -12,20 +12,11 @@ class Game_Files{
     protected Object[][] roadMap;
     protected String[] productionNames= new String[]{"Lumber","Grain","Ore","Wool","Brick","Barren"};
     Random r=new Random(); //in case some random stuff needed (generating tiles randomly?)
-    
+ 
     Game_Files(){
-        composition(3,3,2,3,2,1);
-        setTiles(cityMap,11,11,1);
+        
     }
-    
-    void setTiles(Object[][] map, int rows,int cols,int k){
-        map = new Object[rows][cols];
-        for(int i=1;i<11;i+=2){
-          int j=k*abs(((5-i)/2)+1);
-          //map[i][j]= makeTile();
-        }
-    }
-
+          /*
     void composition(int lumber,int grain,int ore,int wool,int brick,int barren){
         for(int i=0;i<tileArray.length;i++){
             for(int j=lumber;j>0;j--){
@@ -56,16 +47,16 @@ class Game_Files{
     }
               
     
-    void setTiles(Object map, int rows,int cols,int k){
-        map = new Object[rows][cols];
+    void setTiles(int rows,int cols){
         for(int t=0;t<tileArray.length;t++){
             for(int i=1;i<11;i+=2){
-              int j=k*abs(((5-i)/2)+1);
-              //map[i][j]=tileArray[t];
-        }  
-      }  
+              int j=abs(((5-i)/2)+1);
+              cityMap[i][j]=tileArray[t];
+            }
+        }
     }
-  
+    
+
     boolean check(Object e, int x, int y){
         boolean checkThing=true;
         String objectName=e.getClass().getSimpleName();
@@ -107,6 +98,7 @@ class Game_Files{
            return true;
        }
     }
-
+    */
 }
-         
+    
+        
