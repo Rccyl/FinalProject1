@@ -7,7 +7,7 @@ public class Roads extends Buildings{
     }
     
     public Roads(){
-	setCost(1,1,0,0,0);
+	setCost(1,0,0,0,1);
 	setColor(255,0,0);
     }
 
