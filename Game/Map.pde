@@ -54,25 +54,38 @@ void draw(){
 
 
 void setBiomes(int lumber,int grain,int ore,int wool,int brick,int barren){
-  for(int j=0;j<lumber;j++){
-    tiles[j].setBiome(0);
+  int x=0;
+  setBiomes2(x,0,lumber);
+  x+=lumber;
+  setBiomes2(x,1,grain);
+  x+=grain;
+  setBiomes2(x,2,ore);
+  x+=ore;
+  setBiomes2(x,3,wool);
+  x+=wool;
+  setBiomes2(x,4,brick);
+  x+=brick;
+  setBiomes2(x,5,barren);
+  shuffleTiles();
+} 
+
+void setBiomes2(int i,int id,int resource){
+  for(int j=0;j<resource;j++){
+      tiles[i].setBiome(id);
+      i++;
   }
-  for(int j=0;j<grain;j++){
-    tiles[j+lumber].setBiome(1);
+}
+ 
+void shuffleTiles(){
+  Random rnd = new Random();
+  for (int i = tiles.length - 1; i > 0; i--){
+    int index = rnd.nextInt(i + 1);
+    Tile a = tiles[index];
+    tiles[index] = tiles[i];
+    tiles[i] = a;
   }
-  for(int j=0;j<ore;j++){
-    tiles[j+lumber+grain].setBiome(2);
-  }
-  for(int j=0;j<wool;j++){
-    tiles[j+lumber+grain+ore].setBiome(3);
-  }
-  for(int j=0;j<brick;j++){
-    tiles[j+lumber+grain+ore+wool].setBiome(4);
-  }
-   for(int j=0;j<barren;j++){
-    tiles[j+lumber+grain+ore+wool+brick].setBiome(5);
-  }
-}  
+}
+ 
   
 /*
 void setTiles(){
