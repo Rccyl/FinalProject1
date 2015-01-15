@@ -11,6 +11,11 @@ public class Tile{
     this.x=x;
     this.y=y;
     }
+    
+   Tile(){
+     x=0;
+     y=0;
+   }
        
   int getBiome(){
     return biome;
@@ -26,13 +31,8 @@ public class Tile{
     pushMatrix();
     translate(x,y);
     stroke(strokeColor);
-<<<<<<< HEAD
     fill(strokeColor);
     polygon(0, 0, 80, 6);
-=======
-    fill(strokeColor);   
-    polygon(0, 0, 80, 6); 
->>>>>>> 0319f56f3fe7900a04b44f7c8971452df9e22f00
     popMatrix();
   }
   
