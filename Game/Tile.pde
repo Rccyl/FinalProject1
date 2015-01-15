@@ -42,8 +42,8 @@ public class Tile{
     pushMatrix();
     translate(x,y);
     stroke(strokeColor);
+    fill(strokeColor);   
     polygon(0, 0, 80, 6); 
-    //fill(strokeColor);      i dont even
     popMatrix();
   }
   
