@@ -8,6 +8,7 @@ PImage[] img= new PImage[]{lumber, grain, ore, wool, brick, barren};
 
 protected Tile[] tiles = new Tile[19];
 protected Object[][] cityMap= new Object[11][11];
+protected Object[][] roadMap= new Object[11][21];
 
 void setup(){  
   size(900,900);
@@ -95,6 +96,16 @@ void setTiles(){
       cityMap[i][j]=tiles[t];
     }
   }
+  for(int t=0;t<tiles.length;t++){
+    for(int i=1;i<11;i+=2){
+      int j=2*abs(((5-i)/2)+1);
+      roadMap[i][j]=tiles[t];
+    }
+  }
+}
+  
+  
+  
 }
 
 
