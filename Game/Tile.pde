@@ -7,16 +7,10 @@ public class Tile{
   protected color strokeColor;
   protected color[] colorList={color(100,60,20),color(200,200,60),color(60,60,60),color(60,150,60),color(150,20,20),color(150,100,50)};
     
-  Tile(float x,float y){
-    this.x=x;
-    this.y=y;
+  Tile(int biome){
+    setBiome(biome);
     }
-    
-   Tile(){
-     x=0;
-     y=0;
-   }
-       
+           
   int getBiome(){
     return biome;
     }
@@ -26,6 +20,10 @@ public class Tile{
     strokeColor=colorList[biome];
   }
   
+  void setXY(float x,float y){
+      this.x=x;
+      this.y=y;
+  }
   
   void display(){
     pushMatrix();
