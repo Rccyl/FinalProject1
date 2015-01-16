@@ -11,26 +11,26 @@ protected Object[][] cityMap= new Object[11][11];
 protected Object[][] roadMap= new Object[11][21];
 
 void setup(){  
-  size(900,900);
+  size(1300,800);
   background(80,160,200);
     
   setBiomes(4,4,3,4,3,1);
   setTiles();
   
   for(int i=0;i<3;i++){
-    tiles[i].setXY(i*80*sqrt(3)+width*1/3,200);
+    tiles[i].setXY(i*80*sqrt(3)+width*1/5,150);
   }
   for(int i=3;i<7;i++){
-    tiles[i].setXY((i-3)*80*sqrt(3)+width*1/3-40*sqrt(3),320);
+    tiles[i].setXY((i-3)*80*sqrt(3)+width*1/5-40*sqrt(3),270);
   }
   for(int i=7;i<12;i++){
-    tiles[i].setXY((i-7)*80*sqrt(3)+width*1/3-80*sqrt(3),440);
+    tiles[i].setXY((i-7)*80*sqrt(3)+width*1/5-80*sqrt(3),390);
   }
   for(int i=12;i<16;i++){
-    tiles[i].setXY((i-12)*80*sqrt(3)+width*1/3-40*sqrt(3),560);
+    tiles[i].setXY((i-12)*80*sqrt(3)+width*1/5-40*sqrt(3),510);
   }
   for(int i=16;i<19;i++){
-    tiles[i].setXY((i-16)*80*sqrt(3)+width*1/3,680);
+    tiles[i].setXY((i-16)*80*sqrt(3)+width*1/5,630);
   }
   lumber=loadImage("desks.jpg");
   grain=loadImage("grain.jpg");
@@ -52,6 +52,8 @@ void draw(){
   for(int i=0;i<19;i++){
       tiles[i].display();
     }
+    
+   
   
   
 }

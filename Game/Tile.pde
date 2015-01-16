@@ -28,7 +28,7 @@ public class Tile{
   void display(){
     pushMatrix();
     translate(x,y);
-    stroke(strokeColor);
+    stroke(0);
     fill(strokeColor);
     polygon(0, 0, 80, 6);
     popMatrix();
