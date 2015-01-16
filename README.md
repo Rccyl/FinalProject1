@@ -3,6 +3,11 @@ FinalProject1
 
 Settlers Of Catan
 
+2015-01-15:
+    -Working map created
+    -minor bug with tile colors on map fixed
+    -TO FIX: shuffle method so that biomes are randomized on tiles
+
 2015-01-14:
     -edited map stuff
     -Tiles now being displayed
@@ -10,6 +15,7 @@ Settlers Of Catan
 
 2015-01-13:
     -began development of map
+    -removed sprite class
 
 2015-01-12:
     Better starter guide for understanding sprite animation: http://gamedevelopment.tutsplus.com/tutorials/an-introduction-to-spritesheet-animation--gamedev-13099
