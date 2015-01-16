@@ -57,8 +57,9 @@ void draw(){
     }
     
   for (int i=0;i<players.length;i++){
-    textSize(32);
-    text("Player "+(i+1)+" Stats:",width*4/5)
+    textSize(25);
+    text("Player "+(i+1)+" Stats:",width*9/13,((i*250)/(players.length-1))+150);
+    fill(0,0,0);
   }
   
     if (mousePressed){
