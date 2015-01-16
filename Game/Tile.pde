@@ -10,6 +10,10 @@ public class Tile{
   Tile(int biome){
     setBiome(biome);
     }
+  
+  Tile(){
+   setBiome(0); 
+  }
            
   int getBiome(){
     return biome;
@@ -44,5 +48,5 @@ public class Tile{
     }
     endShape(CLOSE);
   }
-  
 }
+

@@ -10,6 +10,7 @@ protected Tile[] tiles = new Tile[19];
 protected Object[][] cityMap= new Object[11][11];
 protected Object[][] roadMap= new Object[11][21];
 protected Object thing;
+protected Object[] players;
 
 void setup(){  
   size(1300,800);
@@ -40,6 +41,7 @@ void setup(){
   brick=loadImage("brick.jpg");
   barren=loadImage("barren.jpg");
   
+  players=new Object[2];
   
   
 }
@@ -54,7 +56,7 @@ void draw(){
       tiles[i].display();
     }
     
-   
+  for (int i=0;i<players.length;i++)
   
   if (mousePressed){
    //getting object to be placed
@@ -157,5 +159,5 @@ void setTiles(){
        }
   
 
-
+    }
 
