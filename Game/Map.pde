@@ -56,7 +56,10 @@ void draw(){
       tiles[i].display();
     }
     
-  for (int i=0;i<players.length;i++)
+  for (int i=0;i<players.length;i++){
+    textSize(32);
+    text("Player "+(i+1)+" Stats:",width*4/5)
+  }
   
   if (mousePressed){
    //getting object to be placed
