@@ -14,20 +14,24 @@ protected Object thing;
 void setup(){  
   size(900,900);
   background(80,160,200);
+    
+  setBiomes(4,4,3,4,3,1);
+  setTiles();
+  
   for(int i=0;i<3;i++){
-    tiles[i]=new Tile(i*80*sqrt(3)+width*1/3,200);
+    tiles[i].setXY(i*80*sqrt(3)+width*1/3,200);
   }
   for(int i=3;i<7;i++){
-    tiles[i]=new Tile((i-3)*80*sqrt(3)+width*1/3-40*sqrt(3),320);
+    tiles[i].setXY((i-3)*80*sqrt(3)+width*1/3-40*sqrt(3),320);
   }
   for(int i=7;i<12;i++){
-    tiles[i]=new Tile((i-7)*80*sqrt(3)+width*1/3-80*sqrt(3),440);
+    tiles[i].setXY((i-7)*80*sqrt(3)+width*1/3-80*sqrt(3),440);
   }
   for(int i=12;i<16;i++){
-    tiles[i]=new Tile((i-12)*80*sqrt(3)+width*1/3-40*sqrt(3),560);
+    tiles[i].setXY((i-12)*80*sqrt(3)+width*1/3-40*sqrt(3),560);
   }
   for(int i=16;i<19;i++){
-    tiles[i]=new Tile((i-16)*80*sqrt(3)+width*1/3,680);
+    tiles[i].setXY((i-16)*80*sqrt(3)+width*1/3,680);
   }
   lumber=loadImage("desks.jpg");
   grain=loadImage("grain.jpg");
@@ -36,8 +40,6 @@ void setup(){
   brick=loadImage("brick.jpg");
   barren=loadImage("barren.jpg");
   
-  setBiomes(4,4,3,4,3,1);
-  setTiles();
   
   
 }
@@ -80,7 +82,7 @@ void setBiomes(int lumber,int grain,int ore,int wool,int brick,int barren){
 
 void setBiomes2(int i,int id,int resource){
   for(int j=0;j<resource;j++){
-      tiles[i].setBiome(id);
+      tiles[i]=new Tile(id);
       i++;
   }
 }
@@ -152,6 +154,6 @@ void setTiles(){
            return true;
        }
   
-}
+
 
 
