@@ -8,9 +8,21 @@ class Player{
     // Lumber(0), Grain(1), Ore(2), Wool(3), Brick(4)
   
   Player(){
+    setSupply(0,0,0,0,0);
   }
   
- 
+  int[] getSupply(){
+    return supply; 
+  }
+  
+  void setSupply(int lumber, int grain, int ore, int wool, int brick){
+    supply[0]=lumber;
+    supply[1]=grain;
+    supply[2]=ore;
+    supply[3]=wool;
+    supply[4]=brick;
+  }
+  
   void buildSettlement(){
     if(mousePressed && 
     mouseX>=tiles[8].getX()-80 && mouseX<=tiles[12].getX()+80 && 
