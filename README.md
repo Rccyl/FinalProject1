@@ -7,6 +7,8 @@ Settlers Of Catan
     -player stats added
     -title added
     -current player's stats is highlighted
+    -buttons for possible moves/actions will show up only on the status bar of the current player (i.e., if it's not a player turn, no buttons appear and text won't be highlighted)
+    -NEED TO: figure out which button user clicked on (if they did)
 
 2015-01-16:
     -biomes successfully randomized on tiles
