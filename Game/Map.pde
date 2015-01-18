@@ -76,6 +76,9 @@ void draw(){
   }
   
   for (int i=0;i<players.length;i++){
+    fill(255,255,255);
+    rect(width*9/13-10,((i*410)/(players.length-1))+120,300,125, 7);
+    
     textSize(25);
     if (players[i].getPlayerTurn()){
       fill(237,67,55);
@@ -83,25 +86,26 @@ void draw(){
     }
     else{
       fill(0,0,0); 
-    }
-    text("Player "+(i+1)+" Stats:",width*9/13,((i*380)/(players.length-1))+150);
+    }    
+    
+    text("Player "+(i+1)+" Stats:",width*9/13,((i*410)/(players.length-1))+150);
     
     int[] pSupply=players[i].getSupply();
     textSize(12);
     //fill(0,0,0);
-    text("Lumber: "+pSupply[0],width*9/13,((i*380)/(players.length-1))+180);
+    text("Lumber: "+pSupply[0],width*9/13,((i*410)/(players.length-1))+170);
     textSize(12);
     //fill(0,0,0);
-    text("Grain: "+pSupply[1],width*10/13,((i*380)/(players.length-1))+180);
+    text("Grain: "+pSupply[1],width*10/13,((i*410)/(players.length-1))+170);
     textSize(12);
     //fill(0,0,0);
-    text("Ore: "+pSupply[2],width*11/13,((i*380)/(players.length-1))+180);
+    text("Ore: "+pSupply[2],width*11/13,((i*410)/(players.length-1))+170);
     textSize(12);
     //fill(0,0,0);
-    text("Wool: "+pSupply[3],width*9/13,((i*380)/(players.length-1))+210);
+    text("Wool: "+pSupply[3],width*9/13,((i*410)/(players.length-1))+190);
     textSize(12);
     //fill(0,0,0);
-    text("Brick: "+pSupply[4],width*10/13,((i*380)/(players.length-1))+210);
+    text("Brick: "+pSupply[4],width*10/13,((i*410)/(players.length-1))+190);
 
   }
   
