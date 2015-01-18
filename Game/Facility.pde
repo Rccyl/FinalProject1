@@ -1,14 +1,14 @@
 import java.lang.*;
 
-class Facilities extends Buildings{
+class Facility extends Building{
     protected int[] production;  
   
-    Facilities(int rCred, int rCgreen, int rCblue){
+    Facility(int rCred, int rCgreen, int rCblue){
 	setCost(1,1,1,1,1);
 	setColor(rCred,rCgreen,rCblue);
     }
 
-    Facilities(){
+    Facility(){
 	setCost(1,1,1,1,1);
 	setColor(0,0,255);
     }

@@ -1,10 +1,10 @@
 import java.util.*;
 
-abstract class Buildings{
+abstract class Building{
     protected int[] cost= new int[5];// (lumber, grain, ore, wool, brick, barren)
     protected int[] paintColor= new int[3];// bgm numbers to 255 (red val, green val, blue val)
 
-    Buildings(){
+    Building(){
 	setCost(1,1,1,1,1);
 	setColor(255,0,0);
     }
