@@ -1,12 +1,10 @@
 
-<<<<<<< HEAD
 class Game_Files{
     
     protected String[] productionNames= new String[]{"Lumber","Grain","Ore","Wool","Brick","Barren"};
     Random r=new Random(); //in case some random stuff needed (generating tiles randomly?)
  
     Game_Files(){
-        
     }
           /*
     void composition(int lumber,int grain,int ore,int wool,int brick,int barren){
@@ -92,7 +90,4 @@ class Game_Files{
     }
     */
 }
-    
-        
-=======
->>>>>>> a4ee60e476653ff60cc9caa0cea81736a6ca89ea
+

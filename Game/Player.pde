@@ -11,8 +11,8 @@ class Player{
  
   void buildSettlement(){
     if(mousePressed && 
-    mouseX>=tile[8].getX()-80 && mouseX<=tile[12].getX()+80 && 
-    mouseY>=tile[18].getY()-80 && mouseY<=tile[2].getY()+80){
+    mouseX>=tiles[8].getX()-80 && mouseX<=tiles[12].getX()+80 && 
+    mouseY>=tiles[18].getY()-80 && mouseY<=tiles[2].getY()+80){
     }
   }
       

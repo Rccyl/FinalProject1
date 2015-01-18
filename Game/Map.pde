@@ -67,7 +67,6 @@ void draw(){
    //getting object to be placed
     int x= mouseX;
    int y= mouseY;
-   check(thing,x,y);
   }
   
 }
@@ -132,7 +131,7 @@ void setTiles(){
   }
 }
   
-
+/*
 boolean check(Object e, int x, int y){
   boolean checkThing=true;
   String objectName=e.getClass().getSimpleName();
@@ -146,7 +145,7 @@ boolean check(Object e, int x, int y){
 }
 
 boolean checkFacilities(Object facility,int x, int y){
-  Object thing= cityMap[x][y];'
+  Object thing= cityMap[x][y];
   int[] paintColor= facility.getColor();
   int red=paintColor[0];
   int green=paintColor[1];
@@ -176,6 +175,10 @@ boolean checkRoads(Object road,int x, int y){
     roadMap[x][y]= new Roads();
     // how to get class of road (road.getClass() doesn't work)
     return true;
+    
   }
-}
+  
+  */
+  
+
 
