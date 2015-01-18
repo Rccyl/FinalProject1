@@ -42,7 +42,7 @@ void setup(){
   brick=loadImage("brick.jpg");
   barren=loadImage("barren.jpg");
   
-  players=new Object[2];
+  players=new Object[4];
   
   
 }
@@ -146,11 +146,7 @@ boolean check(Object e, int x, int y){
 }
 
 boolean checkFacilities(Object facility,int x, int y){
-  Object thing= cityMap[x][y];'
-  int[] paintColor= facility.getColor();
-  int red=paintColor[0];
-  int green=paintColor[1];
-  int blue=paintColor[2];
+  Object thing= cityMap[x][y];
   String thingName=thing.getClass().getSimpleName(); //what is already there
   String putThingName=facility.getClass().getSimpleName(); //what you want to put
   String[] classes=new String[]{"Settlement","Cities","Facilities","Trading"};
@@ -158,7 +154,7 @@ boolean checkFacilities(Object facility,int x, int y){
     return false;
   }
   else{
-    cityMap[x][y]= new Facilities();
+    cityMap[x][y]= new Facility();
     // how to get class of facility (facility.getClass() doesn't work)
     return true;
   }
@@ -173,7 +169,7 @@ boolean checkRoads(Object road,int x, int y){
     return false;
   } 
   else{
-    roadMap[x][y]= new Roads();
+    roadMap[x][y]= new Road();
     // how to get class of road (road.getClass() doesn't work)
     return true;
   }
