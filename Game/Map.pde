@@ -54,8 +54,8 @@ void draw(){
   background(80,160,200);
   
   for(int i=0;i<19;i++){
-      tiles[i].display();
-    }
+  tiles[i].display();
+  }
     
   for (int i=0;i<players.length;i++){
     textSize(25);
@@ -63,9 +63,9 @@ void draw(){
     fill(0,0,0);
   }
   
-    if (mousePressed){
+  if (mousePressed){
    //getting object to be placed
-   int x= mouseX;
+    int x= mouseX;
    int y= mouseY;
    check(thing,x,y);
   }
@@ -133,50 +133,49 @@ void setTiles(){
 }
   
 
+boolean check(Object e, int x, int y){
+  boolean checkThing=true;
+  String objectName=e.getClass().getSimpleName();
+  if (objectName.equals("Facilities")){
+    checkThing=checkFacilities(e,x,y); 
+  }
+  else if (objectName.equals("Roads")){
+    checkThing=checkRoads(e,x,y); 
+  }
+  return checkThing;
+}
 
-
-  
-    boolean check(Object e, int x, int y){
-        boolean checkThing=true;
-        String objectName=e.getClass().getSimpleName();
-        if (objectName.equals("Facilities")){
-           checkThing=checkFacilities(e,x,y); 
-        }
-        else if (objectName.equals("Roads")){
-           checkThing=checkRoads(e,x,y); 
-        }
-        return checkThing;
-    }
-
-    boolean checkFacilities(Object facility,int x, int y){
-       Object thing= cityMap[x][y];
-       String thingName=thing.getClass().getSimpleName(); //what is already there
-       String putThingName=facility.getClass().getSimpleName(); //what you want to put
-       String[] classes={"Settlement","Cities","Facilities","Trading"};
-       if (thingName==null || Arrays.asList(classes).contains(thingName)){
-           return false;
-       } 
-       else{
-           cityMap[x][y]= new Object();
-           // how to get class of facility (facility.getClass() doesn't work)
-           return true;
-       }
-    }
+boolean checkFacilities(Object facility,int x, int y){
+  Object thing= cityMap[x][y];'
+  int[] paintColor= facility.getColor();
+  int red=paintColor[0];
+  int green=paintColor[1];
+  int blue=paintColor[2];
+  String thingName=thing.getClass().getSimpleName(); //what is already there
+  String putThingName=facility.getClass().getSimpleName(); //what you want to put
+  String[] classes=new String[]{"Settlement","Cities","Facilities","Trading"};
+  if(thingName==null || Arrays.asList(classes).contains(thingName)){
+    return false;
+  }
+  else{
+    cityMap[x][y]= new Facilities();
+    // how to get class of facility (facility.getClass() doesn't work)
+    return true;
+  }
+}
     
-    boolean checkRoads(Object road,int x, int y){
-       Object thing= roadMap[x][y];
-       String thingName=thing.getClass().getSimpleName(); //what is already there
-       String putThingName=road.getClass().getSimpleName(); //what you want to put
-       String[] classes={"Roads"};
-       if (thingName==null || Arrays.asList(classes).contains(thingName)){
-           return false;
-       } 
-       else{
-           roadMap[x][y]= new Object();
-           // how to get class of road (road.getClass() doesn't work)
-           return true;
-       }
-  
-
-    }
+boolean checkRoads(Object road,int x, int y){
+  Object thing= roadMap[x][y];
+  String thingName=thing.getClass().getSimpleName(); //what is already there
+  String putThingName=road.getClass().getSimpleName(); //what you want to put
+  String[] classes=new String[]{"Roads"};
+  if (thingName==null || Arrays.asList(classes).contains(thingName)){
+    return false;
+  } 
+  else{
+    roadMap[x][y]= new Roads();
+    // how to get class of road (road.getClass() doesn't work)
+    return true;
+  }
+}
 

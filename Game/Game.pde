@@ -1,10 +1,5 @@
-import java.util.*;
-//importing sprite animation stuff
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.geom.AffineTransform;
-import java.awt.image.BufferedImage;
 
+<<<<<<< HEAD
 class Game_Files{
     
     protected String[] productionNames= new String[]{"Lumber","Grain","Ore","Wool","Brick","Barren"};
@@ -99,3 +94,5 @@ class Game_Files{
 }
     
         
+=======
+>>>>>>> a4ee60e476653ff60cc9caa0cea81736a6ca89ea
