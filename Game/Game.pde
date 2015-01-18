@@ -7,9 +7,6 @@ import java.awt.image.BufferedImage;
 
 class Game_Files{
     
-    protected int[] tileArray=new int[19];
-    protected Object[][] cityMap;
-    protected Object[][] roadMap;
     protected String[] productionNames= new String[]{"Lumber","Grain","Ore","Wool","Brick","Barren"};
     Random r=new Random(); //in case some random stuff needed (generating tiles randomly?)
  
