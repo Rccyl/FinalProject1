@@ -6,9 +6,16 @@ class Player{
   protected ArrayList<Road> roads= new ArrayList<Road>();
   protected int[] supply= new int[5];
     // Lumber(0), Grain(1), Ore(2), Wool(3), Brick(4)
+ protected boolean playerTurn;
+  
+  Player(boolean turn){
+    setSupply(0,0,0,0,0);
+    setPlayerTurn(turn);
+  }
   
   Player(){
     setSupply(0,0,0,0,0);
+    setPlayerTurn(false);
   }
   
   int[] getSupply(){
@@ -21,6 +28,14 @@ class Player{
     supply[2]=ore;
     supply[3]=wool;
     supply[4]=brick;
+  }
+  
+  boolean getPlayerTurn(){
+   return playerTurn; 
+  }
+  
+  void setPlayerTurn(boolean turn){
+    playerTurn=turn;
   }
   
   void buildSettlement(){
