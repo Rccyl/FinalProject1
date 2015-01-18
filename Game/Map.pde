@@ -66,7 +66,7 @@ void draw(){
   if (mousePressed){
    //getting object to be placed
     int x= mouseX;
-   int y= mouseY;
+    int y= mouseY;
   }
   
 }
