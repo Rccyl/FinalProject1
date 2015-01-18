@@ -10,7 +10,7 @@ protected Tile[] tiles = new Tile[19];
 protected Object[][] cityMap= new Object[11][11];
 protected Object[][] roadMap= new Object[11][21];
 protected Object thing;
-protected Object[] players;
+protected Player[] players;
 
 void setup(){  
   size(1300,800);
@@ -42,16 +42,33 @@ void setup(){
   brick=loadImage("brick.jpg");
   barren=loadImage("barren.jpg");
   
-  players=new Object[4];
-  
+  players=new Player[4];
+  for (int i=0;i<players.length;i++){
+   players[i]=new Player(); 
+  }
   
 }
 
 void draw(){
-
   //image(lumber,0,height/2,lumber.width/2,lumber.height/2);
-  
   background(80,160,200);
+  
+  //title setup
+  textSize(20);
+  fill(255,215,0);
+  text("THE",width*9/13,50);
+  textSize(30);
+  fill(255,215,0);
+  text("SETTLERS",width*9/13+40,50);
+  textSize(20);
+  fill(255,215,0);
+  text("OF",width*10/13+80,50);
+  textSize(30);
+  fill(255,215,0);
+  text("______________",width*9/13,52);
+  textSize(61);
+  fill(255,215,0);
+  text("CATAN",width*9/13,100);
   
   for(int i=0;i<19;i++){
   tiles[i].display();
@@ -59,8 +76,26 @@ void draw(){
     
   for (int i=0;i<players.length;i++){
     textSize(25);
-    text("Player "+(i+1)+" Stats:",width*9/13,((i*250)/(players.length-1))+150);
     fill(0,0,0);
+    text("Player "+(i+1)+" Stats:",width*9/13,((i*380)/(players.length-1))+150);
+    
+    int[] pSupply=players[i].getSupply();
+    textSize(12);
+    fill(0,0,0);
+    text("Lumber: "+pSupply[0],width*9/13,((i*380)/(players.length-1))+180);
+    textSize(12);
+    fill(0,0,0);
+    text("Grain: "+pSupply[1],width*10/13,((i*380)/(players.length-1))+180);
+    textSize(12);
+    fill(0,0,0);
+    text("Ore: "+pSupply[2],width*11/13,((i*380)/(players.length-1))+180);
+    textSize(12);
+    fill(0,0,0);
+    text("Wool: "+pSupply[3],width*9/13,((i*380)/(players.length-1))+210);
+    textSize(12);
+    fill(0,0,0);
+    text("Brick: "+pSupply[4],width*10/13,((i*380)/(players.length-1))+210);
+
   }
   
   if (mousePressed){
