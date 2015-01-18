@@ -154,11 +154,11 @@ boolean checkFacilities(Object facility,int x, int y){
   String thingName=thing.getClass().getSimpleName(); //what is already there
   String putThingName=facility.getClass().getSimpleName(); //what you want to put
   String[] classes=new String[]{"Settlement","Cities","Facilities","Trading"};
-  if (Arrays.asList(classes).contains(thingName)){
+  if(thingName==null || Arrays.asList(classes).contains(thingName)){
     return false;
   }
-  else if (thingName==null){
-    cityMap[x][y]= new Facilities(red,green,blue);
+  else{
+    cityMap[x][y]= new Facilities();
     // how to get class of facility (facility.getClass() doesn't work)
     return true;
   }

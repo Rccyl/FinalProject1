@@ -1,5 +1,4 @@
 class Player{
-}
   
   protected ArrayList<Tile> territory;
   protected ArrayList<Settlement> structures;
