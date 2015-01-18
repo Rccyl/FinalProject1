@@ -5,4 +5,12 @@ class Player{
   protected ArrayList<Road> roads;
   protected int[] supply= new int[5];
   
+  Player(){
+  }
+  
+  /*
+  void buildSettlement(){
+    if(mousePressed && mouseX){
+      
+  */
 }
