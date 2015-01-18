@@ -6,7 +6,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
 class Game_Files{
-    
+    /*
     protected int[] tileArray=new int[19];
     protected Object[][] cityMap;
     protected Object[][] roadMap;
@@ -16,7 +16,7 @@ class Game_Files{
     Game_Files(){
         
     }
-          /*
+    
     void composition(int lumber,int grain,int ore,int wool,int brick,int barren){
         for(int i=0;i<tileArray.length;i++){
             for(int j=lumber;j>0;j--){
@@ -100,5 +100,4 @@ class Game_Files{
     }
     */
 }
-    
-        
+/
