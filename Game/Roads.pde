@@ -1,12 +1,12 @@
-public class Roads extends Buildings{
+class Roads extends Buildings{
 
     //note rCred is road color red (and same for green and blue)
-    public Roads(int rCred, int rCgreen, int rCblue){
+    Roads(int rCred, int rCgreen, int rCblue){
 	setCost(1,1,0,0,0);
 	setColor(rCred,rCgreen,rCblue);
     }
     
-    public Roads(){
+    Roads(){
 	setCost(1,0,0,0,1);
 	setColor(255,0,0);
     }

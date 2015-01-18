@@ -1,11 +1,11 @@
-public class Settlements extends Facilities{
+class Settlements extends Facilities{
 
-    public Settlements(int rCred, int rCgreen, int rCblue){
+    Settlements(int rCred, int rCgreen, int rCblue){
 	setCost(1,1,0,0,0);
 	setColor(rCred,rCgreen,rCblue);
     }
     
-    public Settlements(){
+    Settlements(){
 	setCost(1,1,0,1,0);
 	setColor(255,0,0);
     }

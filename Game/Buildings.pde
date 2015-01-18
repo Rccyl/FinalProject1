@@ -4,16 +4,16 @@ abstract class Buildings{
     protected int[] cost= new int[5];// (lumber, grain, ore, wool, brick, barren)
     protected int[] paintColor= new int[3];// bgm numbers to 255 (red val, green val, blue val)
 
-    public Buildings(){
+    Buildings(){
 	setCost(1,1,1,1,1);
 	setColor(255,0,0);
     }
     
-    public int[] getCost(){
+    int[] getCost(){
 	return cost;
     }
 
-    public void setCost(int lumber, int grain, int wool, int brick, int ore){
+    void setCost(int lumber, int grain, int wool, int brick, int ore){
 	cost[0]=lumber;
 	cost[1]=grain;
 	cost[2]=wool;
@@ -21,11 +21,11 @@ abstract class Buildings{
 	cost[4]=ore;
     }
 
-    public int[] getColor(){
+    int[] getColor(){
 	return paintColor;
     }
 
-    public void setColor(int red, int green, int blue){
+    void setColor(int red, int green, int blue){
 	paintColor[0]=red;
 	paintColor[1]=green;
 	paintColor[2]=blue;

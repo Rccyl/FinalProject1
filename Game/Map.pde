@@ -17,6 +17,7 @@ void setup(){
   background(80,160,200);
     
   setBiomes(4,4,3,4,3,1);
+  setRolls();
   setTiles();
   
   for(int i=0;i<3;i++){
@@ -104,6 +105,17 @@ void shuffleTiles(){
     tiles[i]=a;
   }
 }
+
+void setRolls(){
+    ArrayList<Integer> rolls = new ArrayList();
+    rolls.addAll(Arrays.asList(1,2,2,2,2,2,2,2,2,1));
+    Collections.shuffle(rolls);
+    for(int i=0;i<rolls.size();i++){
+      if (tiles[i].getBiome()!=6){
+        tiles[i].setRoll(rolls.get(i));
+      }
+    }
+}
  
 void setTiles(){
   for(int t=0;t<tiles.length;t++){
@@ -120,6 +132,9 @@ void setTiles(){
   }
 }
   
+
+
+
   
     boolean check(Object e, int x, int y){
         boolean checkThing=true;
