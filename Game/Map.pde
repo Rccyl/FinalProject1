@@ -44,7 +44,8 @@ void setup(){
   
   players=new Player[4];
   for (int i=0;i<players.length;i++){
-   players[i]=new Player(); 
+    if (i==0){players[i]=new Player(true);}
+    else{players[i]=new Player();} 
   }
   
 }
@@ -73,27 +74,33 @@ void draw(){
   for(int i=0;i<19;i++){
   tiles[i].display();
   }
-    
+  
   for (int i=0;i<players.length;i++){
     textSize(25);
-    fill(0,0,0);
+    if (players[i].getPlayerTurn()){
+      fill(237,67,55);
+      //NOTE: FIGURE OUT HOW TO CHANGE PLAYERTURN ONCE PLAYER'S TURN IS OVER!!!
+    }
+    else{
+      fill(0,0,0); 
+    }
     text("Player "+(i+1)+" Stats:",width*9/13,((i*380)/(players.length-1))+150);
     
     int[] pSupply=players[i].getSupply();
     textSize(12);
-    fill(0,0,0);
+    //fill(0,0,0);
     text("Lumber: "+pSupply[0],width*9/13,((i*380)/(players.length-1))+180);
     textSize(12);
-    fill(0,0,0);
+    //fill(0,0,0);
     text("Grain: "+pSupply[1],width*10/13,((i*380)/(players.length-1))+180);
     textSize(12);
-    fill(0,0,0);
+    //fill(0,0,0);
     text("Ore: "+pSupply[2],width*11/13,((i*380)/(players.length-1))+180);
     textSize(12);
-    fill(0,0,0);
+    //fill(0,0,0);
     text("Wool: "+pSupply[3],width*9/13,((i*380)/(players.length-1))+210);
     textSize(12);
-    fill(0,0,0);
+    //fill(0,0,0);
     text("Brick: "+pSupply[4],width*10/13,((i*380)/(players.length-1))+210);
 
   }
