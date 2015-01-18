@@ -3,6 +3,15 @@ FinalProject1
 
 Settlers Of Catan
 
+2015-01-18:
+    -player stats added
+    -title added
+    -current player's stats is highlighted
+
+2015-01-16:
+    -biomes successfully randomized on tiles
+    -map appearance readjusted
+
 2015-01-15:
     -Working map created
     -minor bug with tile colors on map fixed
