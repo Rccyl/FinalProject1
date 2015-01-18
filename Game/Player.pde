@@ -1,9 +1,9 @@
 class Player{
   
   protected int points;
-  protected ArrayList<Tile> territory;
-  protected ArrayList<Settlement> structures;
-  protected ArrayList<Road> roads;
+  protected ArrayList<Tile> territory = new ArrayList<Tile>();
+  protected ArrayList<Settlement> structures= new ArrayList<Settlement>();
+  protected ArrayList<Road> roads= new ArrayList<Road>();
   protected int[] supply= new int[5];
     // Lumber(0), Grain(1), Ore(2), Wool(3), Brick(4)
   
