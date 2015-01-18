@@ -1,11 +1,11 @@
-class Settlements extends Facilities{
+class Settlement extends Facility{
 
-    Settlements(int rCred, int rCgreen, int rCblue){
+    Settlement(int rCred, int rCgreen, int rCblue){
 	setCost(1,1,0,0,0);
 	setColor(rCred,rCgreen,rCblue);
     }
     
-    Settlements(){
+    Settlement(){
 	setCost(1,1,0,1,0);
 	setColor(255,0,0);
     }

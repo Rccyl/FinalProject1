@@ -1,11 +1,11 @@
-class Cities extends Facilities{
+class City extends Facility{
     
-    Cities(int rCred, int rCgreen, int rCblue){
+    City(int rCred, int rCgreen, int rCblue){
       setCost(0,3,2,0,0);
       setColor(rCred,rCgreen,rCblue);
     }
 
-    Cities(){
+    City(){
       setCost(0,3,2,0,0);
       setColor(0,0,255);
     }
