@@ -87,9 +87,9 @@ void draw(){
     else{
       fill(0,0,0); 
     }    
-    
+    //players actual stats
     text("Player "+(i+1)+" Stats:",width*9/13,((i*410)/(players.length-1))+150);
-    
+  
     int[] pSupply=players[i].getSupply();
     textSize(12);
     //fill(0,0,0);
@@ -106,17 +106,56 @@ void draw(){
     textSize(12);
     //fill(0,0,0);
     text("Brick: "+pSupply[4],width*10/13,((i*410)/(players.length-1))+190);
+    
+    //buttons for player;
+    if (players[i].getPlayerTurn()){
+      fill(255,0,0);
+      rect(width*9/13-5,((i*410)/(players.length-1))+210,125,25,15);
+      textSize(14);
+      fill(255,255,255);
+      text("Build Settlement",width*9/13+3,((i*410)/(players.length-1))+228);
+      
+      fill(255,0,0);
+      rect(width*10/13+25,((i*410)/(players.length-1))+210,85,25,15);
+      textSize(14);
+      fill(255,255,255);
+      text("Build Road",width*10/13+32,((i*410)/(players.length-1))+228);
+      
+      fill(255,0,0);
+      rect(width*11/13+15,((i*410)/(players.length-1))+210,70,25,15);
+      textSize(14);
+      fill(255,255,255);
+      text("End Turn",width*11/13+20,((i*410)/(players.length-1))+228);
+    }  
 
   }
   
   if (mousePressed){
-   //getting object to be placed
+    //how to get the object to be placed
+    //for now, code below focuses on clicking buttons
     int x= mouseX;
     int y= mouseY;
+<<<<<<< HEAD
+=======
+    int rX = 40;
+    int rY = 60;
+    int rW = 150;
+    int rH = 170;
+    if (mouseOverRect(rX, rY, rW, rH)) { 
+      //do stuff 
+    }
+    else { 
+      //do other stuff
+    }
+>>>>>>> b96c084fdd58d5d9c4686331e0622231e2bee817
   }
   
 }
 
+//from https://amnonp5.wordpress.com/2012/01/28/25-life-saving-tips-for-processing/
+boolean mouseOverRect(int x, int y, int w, int h) {
+  return (mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h);
+}
 
 void setBiomes(int lumber,int grain,int ore,int wool,int brick,int barren){
   int x=0;
