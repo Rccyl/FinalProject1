@@ -135,8 +135,7 @@ void draw(){
     //for now, code below focuses on clicking buttons
     int x= mouseX;
     int y= mouseY;
-<<<<<<< HEAD
-=======
+
     int rX = 40;
     int rY = 60;
     int rW = 150;
@@ -147,7 +146,7 @@ void draw(){
     else { 
       //do other stuff
     }
->>>>>>> b96c084fdd58d5d9c4686331e0622231e2bee817
+
   }
   
 }
