@@ -46,7 +46,7 @@ class Player{
 /*  int getNumCities(){
     return cities.size(); 
   }
-*/
+
   //does it need check function?
   void addCities(int settlementIndex){
     //wood/lumber=0; grain/wheat=1; ore=2; wool/sheep=3; brick/brick=4; <--trying to compare with game rules 
@@ -62,11 +62,11 @@ class Player{
     }
     //can return a message or just do nothing
   }
-  
+  */
   int getNumRoads(){
     return roads.size();
   }
-  
+  /*
   //does it need check function?
   void addRoads(){
     //wood/lumber=0; grain/wheat=1; ore=2; wool/sheep=3; brick/brick=4; <--trying to compare with game rules 
@@ -78,7 +78,7 @@ class Player{
     }
     //can return a message or just do nothing
   }
-  
+  */
   int[] getSupply(){
     return supply; 
   }

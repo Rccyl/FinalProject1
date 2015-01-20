@@ -54,9 +54,6 @@ class Tile{
     fill(strokeColor);
     polygon(0, 0, 80, 6);
     popMatrix();
-    //textSize(25);          // not working
-    //text(roll,x,y);
-    //fill(0,0,0);
   }
   
   void polygon(float x, float y, float radius, int npoints) {

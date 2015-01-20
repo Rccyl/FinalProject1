@@ -7,6 +7,7 @@ PImage barren;
 PImage[] img= new PImage[]{lumber, grain, ore, wool, brick, barren};
 
 protected Tile[] tiles = new Tile[19];
+protected ArrayList<Settlement> settlements = new ArrayList();
 protected Object[][] cityMap= new Object[11][11];
 protected Object[][] roadMap= new Object[11][21];
 protected Object thing;
@@ -57,19 +58,19 @@ void draw(){
   //title setup
   textSize(20);
   fill(255,215,0);
-  text("THE",width*9/13,50);
+  text("THE",width*9/13+40,50);
   textSize(30);
   fill(255,215,0);
-  text("SETTLERS",width*9/13+40,50);
+  text("SETTLERS",width*9/13+80,50);
   textSize(20);
   fill(255,215,0);
-  text("OF",width*10/13+80,50);
+  text("OF",width*10/13+120,50);
   textSize(30);
   fill(255,215,0);
-  text("______________",width*9/13,52);
+  text("______________",width*9/13+40,52);
   textSize(61);
   fill(255,215,0);
-  text("CATAN",width*9/13,100);
+  text("CATAN",width*9/13+40,100);
 
   //action buttons for player
   fill(255,0,0);
@@ -92,6 +93,9 @@ void draw(){
   
   for(int i=0;i<19;i++){
   tiles[i].display();
+  }
+  for(int i=0;i<settlements.size();i++){
+  settlements.get(i).display();
   }
   
   for (int i=0;i<players.length;i++){
@@ -123,7 +127,7 @@ void draw(){
     
     text("Victory Points "+players[i].getPlayerPoints(),width*9/13,((i*410)/(players.length-1))+230);
   }
-  
+  /*
   if (mousePressed){
     //how to get the object to be placed
     //for now, code below focuses on clicking buttons
@@ -140,14 +144,15 @@ void draw(){
     else { 
       //do other stuff
     }
-
   }
   
-}
-
-//from https://amnonp5.wordpress.com/2012/01/28/25-life-saving-tips-for-processing/
-boolean mouseOverRect(int x, int y, int w, int h) {
-  return (mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h);
+  
+  
+  from https://amnonp5.wordpress.com/2012/01/28/25-life-saving-tips-for-processing/
+  boolean mouseOverRect(int x, int y, int w, int h) {
+    return (mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h);
+  }
+  */
 }
 
 void setBiomes(int lumber,int grain,int ore,int wool,int brick,int barren){
@@ -224,8 +229,7 @@ boolean check(Object e, int x, int y){
 
 boolean checkFacilities(Object facility,int x, int y){
   Object thing= cityMap[x][y];
-<<<<<<< HEAD
-=======
+
   int[] paintColor= facility.getColor();
   int red=paintColor[0];
   int green=paintColor[1];

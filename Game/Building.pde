@@ -2,9 +2,8 @@ import java.util.*;
 
 abstract class Building{
     protected int[] cost= new int[5];// (lumber, grain, ore, wool, brick, barren)
-    protected int[] paintColor= new int[3];// bgm numbers to 255 (red val, green val, blue val)
-    protected int x;// x-coordinate
-    protected int y;// y-coordinate
+    protected color strokeColor;
+    protected float x,y;
 
     Building(){
 	setCost(1,1,1,1,1);
@@ -23,31 +22,26 @@ abstract class Building{
 	cost[4]=ore;
     }
 
-    int[] getColor(){
-	return paintColor;
+    color getColor(){
+	return strokeColor;
     }
 
     void setColor(int red, int green, int blue){
-	paintColor[0]=red;
-	paintColor[1]=green;
-	paintColor[2]=blue;
+	strokeColor = color(red,green,blue);
     }
 
     //abstract boolean check(int x, int y);
     
-   int getX(){
+   float getX(){
      return x; 
    }
-   
-   void setX(int x){
-    this.x=x; 
-   }
-   
-   int getY(){
+    
+   float getY(){
      return y; 
    }
    
-   void setY(int y){
+   void setXY(int x,int y){
+    this.x=x;
     this.y=y; 
    }
 }
