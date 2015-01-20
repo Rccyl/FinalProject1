@@ -118,7 +118,7 @@ void draw(){
     text("Brick: "+pSupply[4],width*10/13,((i*410)/(players.length-1))+190);
 
     text("Settlements "+players[i].getNumSettlements(),width*9/13,((i*410)/(players.length-1))+210);
-    text("Cities "+players[i].getNumCities(),width*10/13,((i*410)/(players.length-1))+210);
+    //text("Cities "+players[i].getNumCities(),width*10/13,((i*410)/(players.length-1))+210);
     text("Roads "+players[i].getNumRoads(),width*11/13,((i*410)/(players.length-1))+210);
     
     text("Victory Points "+players[i].getPlayerPoints(),width*9/13,((i*410)/(players.length-1))+230);

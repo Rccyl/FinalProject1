@@ -33,10 +33,8 @@ abstract class Building{
 	paintColor[2]=blue;
     }
 
-<<<<<<< HEAD
     //abstract boolean check(int x, int y);
-} 
-=======
+    
    int getX(){
      return x; 
    }
@@ -53,4 +51,4 @@ abstract class Building{
     this.y=y; 
    }
 }
->>>>>>> 528f9628d722bac1821378267015a9c818297fbd
+

@@ -1,4 +1,4 @@
-class Settlement extends Facility{
+class Settlement extends Building{
 
   protected float x,y;
   protected int []production;

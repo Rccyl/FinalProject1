@@ -3,7 +3,7 @@ class Player{
   protected int points;
   protected ArrayList<Tile> territory = new ArrayList<Tile>();
   protected ArrayList<Settlement> structures= new ArrayList<Settlement>();
-  protected ArrayList<City> cities= new ArrayList<City>();
+ // protected ArrayList<City> cities= new ArrayList<City>();
   protected ArrayList<Road> roads= new ArrayList<Road>();
   protected int[] supply= new int[5];
     // Lumber(0), Grain(1), Ore(2), Wool(3), Brick(4)
@@ -43,10 +43,10 @@ class Player{
     //can return a message or just do nothing
   }
   
-  int getNumCities(){
+/*  int getNumCities(){
     return cities.size(); 
   }
-
+*/
   //does it need check function?
   void addCities(int settlementIndex){
     //wood/lumber=0; grain/wheat=1; ore=2; wool/sheep=3; brick/brick=4; <--trying to compare with game rules 
@@ -55,7 +55,7 @@ class Player{
       int cityX=structures.get(settlementIndex).getX();
       int cityY=structures.get(settlementIndex).getY();
       //added coordinates since city has to be in same place
-      cities.add(new City(cityX,cityY));
+      //cities.add(new City(cityX,cityY));
       structures.remove(settlementIndex);
       setSupply(supply[1]-2,supply[1],supply[2]-3,supply[3],supply[4]);
       setPlayerPoints(getPlayerPoints()+2); 
