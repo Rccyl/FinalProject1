@@ -70,6 +70,25 @@ void draw(){
   textSize(61);
   fill(255,215,0);
   text("CATAN",width*9/13,100);
+
+  //action buttons for player
+  fill(255,0,0);
+  rect(width*9/13-5,667,125,25,15);
+  textSize(14);
+  fill(255,255,255);
+  text("Build Settlement",width*9/13+3,685);
+    
+  fill(255,0,0);
+  rect(width*10/13+25,667,85,25,15);
+  textSize(14);
+  fill(255,255,255);
+  text("Build Road",width*10/13+32,685);
+    
+  fill(255,0,0);
+  rect(width*11/13+15,667,70,25,15);
+  textSize(14);
+  fill(255,255,255);
+  text("End Turn",width*11/13+20,685);
   
   for(int i=0;i<19;i++){
   tiles[i].display();
@@ -92,42 +111,17 @@ void draw(){
   
     int[] pSupply=players[i].getSupply();
     textSize(12);
-    //fill(0,0,0);
     text("Lumber: "+pSupply[0],width*9/13,((i*410)/(players.length-1))+170);
-    textSize(12);
-    //fill(0,0,0);
     text("Grain: "+pSupply[1],width*10/13,((i*410)/(players.length-1))+170);
-    textSize(12);
-    //fill(0,0,0);
     text("Ore: "+pSupply[2],width*11/13,((i*410)/(players.length-1))+170);
-    textSize(12);
-    //fill(0,0,0);
     text("Wool: "+pSupply[3],width*9/13,((i*410)/(players.length-1))+190);
-    textSize(12);
-    //fill(0,0,0);
     text("Brick: "+pSupply[4],width*10/13,((i*410)/(players.length-1))+190);
-    
-    //buttons for player;
-    if (players[i].getPlayerTurn()){
-      fill(255,0,0);
-      rect(width*9/13-5,((i*410)/(players.length-1))+210,125,25,15);
-      textSize(14);
-      fill(255,255,255);
-      text("Build Settlement",width*9/13+3,((i*410)/(players.length-1))+228);
-      
-      fill(255,0,0);
-      rect(width*10/13+25,((i*410)/(players.length-1))+210,85,25,15);
-      textSize(14);
-      fill(255,255,255);
-      text("Build Road",width*10/13+32,((i*410)/(players.length-1))+228);
-      
-      fill(255,0,0);
-      rect(width*11/13+15,((i*410)/(players.length-1))+210,70,25,15);
-      textSize(14);
-      fill(255,255,255);
-      text("End Turn",width*11/13+20,((i*410)/(players.length-1))+228);
-    }  
 
+    text("Settlements "+players[i].getNumSettlements(),width*9/13,((i*410)/(players.length-1))+210);
+    text("Cities "+players[i].getNumCities(),width*10/13,((i*410)/(players.length-1))+210);
+    text("Roads "+players[i].getNumRoads(),width*11/13,((i*410)/(players.length-1))+210);
+    
+    text("Victory Points "+players[i].getPlayerPoints(),width*9/13,((i*410)/(players.length-1))+230);
   }
   
   if (mousePressed){

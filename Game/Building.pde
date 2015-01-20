@@ -3,6 +3,8 @@ import java.util.*;
 abstract class Building{
     protected int[] cost= new int[5];// (lumber, grain, ore, wool, brick, barren)
     protected int[] paintColor= new int[3];// bgm numbers to 255 (red val, green val, blue val)
+    protected int x;// x-coordinate
+    protected int y;// y-coordinate
 
     Building(){
 	setCost(1,1,1,1,1);
@@ -31,5 +33,24 @@ abstract class Building{
 	paintColor[2]=blue;
     }
 
+<<<<<<< HEAD
     //abstract boolean check(int x, int y);
 } 
+=======
+   int getX(){
+     return x; 
+   }
+   
+   void setX(int x){
+    this.x=x; 
+   }
+   
+   int getY(){
+     return y; 
+   }
+   
+   void setY(int y){
+    this.y=y; 
+   }
+}
+>>>>>>> 528f9628d722bac1821378267015a9c818297fbd

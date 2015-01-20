@@ -3,6 +3,11 @@ FinalProject1
 
 Settlers Of Catan
 
+2015-01-19:
+    -player actions buttons position adjusted
+    -added additional stats
+    -created functions to add settlements, cities, and roads to player's inventory as well as updating player stat data
+
 2015-01-18:
     -player stats added
     -title added
