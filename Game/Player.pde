@@ -1,5 +1,6 @@
 class Player{
   
+  protected color playerColor;
   protected int points;
   protected ArrayList<Tile> territory = new ArrayList<Tile>();
   protected ArrayList<Settlement> structures= new ArrayList<Settlement>();
@@ -124,16 +125,22 @@ class Player{
       }else{
         coords=chooseVertex(x+16);
       }
+      Settlement Alpha = new Settlement(coords[0],coords[1],playerColor);
       
+            
     }
   }
   
   float[] chooseVertex(int t){
     float[] coords = new float[2];
     int vertex,dXY;
+    int mapX,mapY;
     if(mouseY>tiles[t].getY()+130 || mouseY<tiles[t].getY()-130){
       vertex=1;
       dXY=signum(tiles[t].getY()-mouseY);
+
+      
+      
     }else if(mouseY>tiles[t].getY()){
       vertex=2;
       dXY=signum(tiles[t].getX()-mouseX);
