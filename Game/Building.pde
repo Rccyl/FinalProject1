@@ -32,4 +32,4 @@ abstract class Building{
     }
 
     //abstract boolean check(int x, int y);
-}
+} 

@@ -76,10 +76,10 @@ class Tile{
       coords[0]=x;
       coords[1]=y+dXY*80;
     }else if(vertex==2){
-      coords[0]=x+dXY*40*sqrt(3);
+      coords[0]=x-dXY*40*sqrt(3);
       coords[1]=y+dXY*40;
     }else {
-      coords[0]=x+dXY*40*sqrt(3);
+      coords[0]=x-dXY*40*sqrt(3);
       coords[1]=y-dXY*40;
     }
     return coords;
