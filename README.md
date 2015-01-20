@@ -3,10 +3,14 @@ FinalProject1
 
 Settlers Of Catan
 
+2015-01-20
+    -removed cities and facilities, working with only settlements
+
 2015-01-19:
     -player actions buttons position adjusted
     -added additional stats
     -created functions to add settlements, cities, and roads to player's inventory as well as updating player stat data
+    -working on build settlement function
 
 2015-01-18:
     -player stats added
