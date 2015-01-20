@@ -5,6 +5,11 @@ class City extends Facility{
       setColor(rCred,rCgreen,rCblue);
     }
 
+    City(int x, int y){
+      setCost(0,3,2,0,0);
+      setColor(0,0,255);
+    }
+
     City(){
       setCost(0,3,2,0,0);
       setColor(0,0,255);
