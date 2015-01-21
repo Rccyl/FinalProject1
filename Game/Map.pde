@@ -21,8 +21,6 @@ void setup(){
     
   setBiomes(4,4,3,4,3,1);
   setRolls();
-  setTiles();
-  
   for(int i=0;i<3;i++){
     tiles[i].setXY(i*80*sqrt(3)+width*1/5,150);
   }
@@ -38,6 +36,8 @@ void setup(){
   for(int i=16;i<19;i++){
     tiles[i].setXY((i-16)*80*sqrt(3)+width*1/5,630);
   }
+  setTiles();
+  
   lumber=loadImage("desks.jpg");
   grain=loadImage("grain.jpg");
   ore=loadImage("ore.jpg");
@@ -218,16 +218,20 @@ void setRolls(){
 }
  
 void setTiles(){
-  for(int t=0;t<tiles.length;t++){
-    for(int i=1;i<11;i+=2){
-      int j=abs(((5-i)/2)+1);
-      cityMap[i][j]=tiles[t];
-    }
-  }
-  for(int t=0;t<tiles.length;t++){
-    for(int i=1;i<11;i+=2){
-      int j=2*abs(((5-i)/2)+1);
-      roadMap[i][j]=tiles[t];
+  for(int i=1;i<10;i+=2){
+    int j=abs(((5-i)/2)+1);
+    if (i==9){
+      for(int t=9;t<-1*((5-i)/2)+5;t++){
+        cityMap[i][j]=tiles[t];
+        tiles[t].setCMXY(i,j);
+        j+=2;
+      }
+    }else {
+      for(int t=9;t<-1*((5-i)/2)+5;t++){
+        cityMap[i][j]=tiles[t];
+        tiles[t].setCMXY(i,j);
+        j+=2;
+      }
     }
   }
 }

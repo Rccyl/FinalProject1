@@ -40,7 +40,7 @@ abstract class Building{
      return y; 
    }
    
-   void setXY(int x,int y){
+   void setXY(float x,float y){
     this.x=x;
     this.y=y; 
    }

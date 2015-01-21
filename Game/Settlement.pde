@@ -1,20 +1,23 @@
 class Settlement extends Building{
 
-  protected int[]chance; 
+  protected int[]chance = new int[3];
+  protected int[]production = new int[3];
  
-  Settlement(int rCred, int rCgreen, int rCblue){
+  Settlement(float x,float y,color player){
     setCost(1,1,0,0,0);
+    setXY(x,y);
+    strokeColor=player;
+    
   }
   
   Settlement(){
-    setCost(1,1,0,1,0);
-    setColor(255,0,0);
   }
   
+    
   void display(){
     pushMatrix();
-    triangle(x,y,x+20,y,x+10,y+10*sqrt(3));
-    rect(x,y,20,20);
+    triangle(x-10,y-10,x+10,y-10,x,y-10-10*sqrt(3));
+    rect(x-10,y+10,20,20);
     stroke(0);
     fill(strokeColor);
     popMatrix();

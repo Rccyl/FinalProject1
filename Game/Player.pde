@@ -1,5 +1,6 @@
 class Player{
   
+  protected color playerColor;
   protected int points;
   protected ArrayList<Tile> territory = new ArrayList<Tile>();
   protected ArrayList<Settlement> structures= new ArrayList<Settlement>();
@@ -92,7 +93,7 @@ class Player{
       }else{
         x=mouseX/5;
       }
-      float[] coords = new float[2];    
+      float[] coords = new float[4];    
       if(y==1){
         coords=chooseVertex(x);
       }else if(y==2){
@@ -104,24 +105,35 @@ class Player{
       }else{
         coords=chooseVertex(x+16);
       }
+      Settlement Alpha = new Settlement(coords[0],coords[1],playerColor);
       
+      
+            
     }
   }
   
   float[] chooseVertex(int t){
-    float[] coords = new float[2];
+    float[] coords = new float[4];
     int vertex,dXY;
     if(mouseY>tiles[t].getY()+130 || mouseY<tiles[t].getY()-130){
       vertex=1;
       dXY=signum(tiles[t].getY()-mouseY);
+      coords[2]=tiles[t].getCMX();
+      coords[3]=tiles[t].getCMY()-dXY;      
     }else if(mouseY>tiles[t].getY()){
       vertex=2;
       dXY=signum(tiles[t].getX()-mouseX);
+      coords[2]=tiles[t].getCMX()-dXY;
+      coords[3]=tiles[t].getCMY()-dXY;
     }else{
       vertex=3;
       dXY=signum(tiles[t].getX()-mouseX);
+      coords[2]=tiles[t].getCMX()-dXY;
+      coords[3]=tiles[t].getCMY()+dXY;
     }
-    coords=tiles[t].findVertex(vertex,dXY);
+    float[] vCoords=tiles[t].findVertex(vertex,dXY);
+    coords[0]=vCoords[0];
+    coords[1]=vCoords[1];    
     return coords;
   }
   

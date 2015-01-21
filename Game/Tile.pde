@@ -6,6 +6,7 @@ class Tile{
   // Lumber(0),Grain(1),Ore(2),Wool(3),Brick(4),Barren(5)
   // 2-12 dice roll
   protected float x,y;
+  protected int cmX,cmY;
   protected color strokeColor;
   protected color[] colorList={color(100,60,20),color(200,200,60),color(60,60,60),color(60,150,60),color(150,20,20),color(150,100,50)};
     
@@ -47,6 +48,19 @@ class Tile{
       this.y=y;
   }
   
+  int getCMX(){
+    return cmX;
+  }
+  
+  int getCMY(){
+    return cmY;
+  }
+  
+  void setCMXY(int x,int y){
+      this.cmX=x;
+      this.cmY=y;
+  }
+  
   void display(){
     pushMatrix();
     translate(x,y);
@@ -68,7 +82,7 @@ class Tile{
   }
   
   float[] findVertex(int vertex,int dXY){
-    float[] coords = new float[2];
+    float[] coords = new float[4];
     if(vertex==1){
       coords[0]=x;
       coords[1]=y+dXY*80;
