@@ -4,7 +4,6 @@ class Player{
   protected int points;
   protected ArrayList<Tile> territory = new ArrayList<Tile>();
   protected ArrayList<Settlement> structures= new ArrayList<Settlement>();
- // protected ArrayList<City> cities= new ArrayList<City>();
   protected ArrayList<Road> roads= new ArrayList<Road>();
   protected int[] supply= new int[5];
     // Lumber(0), Grain(1), Ore(2), Wool(3), Brick(4)
@@ -32,8 +31,11 @@ class Player{
     return structures.size(); 
   }
   
-  //does it need check function?
-  void addSettlements(){
+  ArrayList<Settlement> getSettlementsAL(){
+    return structures;
+  }
+  
+  boolean addSettlements(){
     //wood/lumber=0; grain/wheat=1; ore=2; wool/sheep=3; brick/brick=4; <--trying to compare with game rules 
     boolean hasResources= (supply[0]>0 && supply[1]>0 && supply[3]>0 && supply[4]>0);
     if (hasResources){
@@ -41,45 +43,22 @@ class Player{
       setSupply(supply[0]-1,supply[1]-1,supply[2],supply[3]-1,supply[4]-1);
       setPlayerPoints(getPlayerPoints()+1);  
     }
-    //can return a message or just do nothing
+    return hasResources;
   }
   
-/*  int getNumCities(){
-    return cities.size(); 
-  }
-
-  //does it need check function?
-  void addCities(int settlementIndex){
-    //wood/lumber=0; grain/wheat=1; ore=2; wool/sheep=3; brick/brick=4; <--trying to compare with game rules 
-    boolean hasResources= (supply[1]>1 && supply[2]>2);
-    if (hasResources){
-      int cityX=structures.get(settlementIndex).getX();
-      int cityY=structures.get(settlementIndex).getY();
-      //added coordinates since city has to be in same place
-      //cities.add(new City(cityX,cityY));
-      structures.remove(settlementIndex);
-      setSupply(supply[1]-2,supply[1],supply[2]-3,supply[3],supply[4]);
-      setPlayerPoints(getPlayerPoints()+2); 
-    }
-    //can return a message or just do nothing
-  }
-  */
   int getNumRoads(){
     return roads.size();
   }
-  /*
-  //does it need check function?
-  void addRoads(){
+
+  boolean addRoads(){
     //wood/lumber=0; grain/wheat=1; ore=2; wool/sheep=3; brick/brick=4; <--trying to compare with game rules 
     boolean hasResources= (supply[0]>0 && supply[4]>0);
     if (hasResources){
       structures.add(new Settlement());
       setSupply(supply[0]-1,supply[1],supply[2],supply[3],supply[4]-1);
-      //setPlayerPoints(getPlayerPoints()); 
     }
-    //can return a message or just do nothing
+    return hasResources;
   }
-  */
   int[] getSupply(){
     return supply; 
   }
