@@ -12,17 +12,14 @@ protected Object[][] cityMap= new Object[11][11];
 protected Object[][] roadMap= new Object[11][21];
 protected Object thing;
 protected Player[] players;
-<<<<<<< HEAD
 protected boolean[] buttons;
 protected color colorBS,colorBR,colorET;//edit so can change color
-=======
 protected color colorBS,colorBR,colorET;
 protected int currentPlayer;
 protected int mouseClickButton=-1; //Works only for buttons.
 protected int numClicks=0;
 int x; //yes for mouse, but easy way to keep track across methods
 int y;
->>>>>>> f7dff5f555476f2967d250d27eaeaae611a45342
 
 void setup(){  
   size(1300,800);
@@ -64,8 +61,6 @@ void setup(){
   for (int i=0; i<buttons.length;i++){
     buttons[i]=false; 
   }
-  
-
   
 }
 
@@ -127,14 +122,9 @@ void draw(){
     }
     else{
       fill(0,0,0); 
-<<<<<<< HEAD
-    }    
-    //players actual stats
-=======
-    }  
+    }     
     
     //Player's Stats
->>>>>>> f7dff5f555476f2967d250d27eaeaae611a45342
     text("Player "+(i+1)+" Stats:",width*9/13,((i*410)/(players.length-1))+150);
   
     int[] pSupply=players[i].getSupply();
@@ -151,17 +141,6 @@ void draw(){
     text("Victory Points "+players[i].getPlayerPoints(),width*9/13,((i*410)/(players.length-1))+230);
   }
  
-<<<<<<< HEAD
-  //changes color of whatever button mouse if hovering over 
-  if(mouseOverButton(width*9/13-5,667,125,25)){ //means selected "Build Settlement" button
-    colorBS=color(235,125,125);
-  }
-  else if (mouseOverButton(width*10/13+25,667,85,25)){ //means selected "Build Roads" button
-    colorBR=color(235,125,125);
-  }
-  else if (mouseOverButton(width*11/13+15,667,70,25)){ //means selected "End Turn" button 
-    colorET=color(235,125,125);
-=======
   //Indicates button mouse is hovering over
   if(mouseOverButton(width*9/13-5,667,125,25)){ //means over "Build Settlement" button
     colorBS=color(255,51,51);
@@ -171,17 +150,14 @@ void draw(){
   }
   else if (mouseOverButton(width*11/13+15,667,70,25)){ //means over "End Turn" button 
     colorET=color(255,51,51);
->>>>>>> f7dff5f555476f2967d250d27eaeaae611a45342
   }
   else{  
     colorBS=color(255,0,0);
     colorBR=color(255,0,0);
     colorET=color(255,0,0);
   } 
-<<<<<<< HEAD
 
-=======
-  
+  //Dealing with Button Actions
   if (mouseClickButton==0 && players[currentPlayer].addSettlements()){//the addSettlements is temporary backup for buildSettlements; won't have enough time to code rest
     fill(players[currentPlayer].getPlayerColor());
     rect(x,y,25,20,10);  
@@ -201,20 +177,10 @@ void draw(){
       numClicks=numClicks-1;
     }
   }while(numClicks>0);
->>>>>>> f7dff5f555476f2967d250d27eaeaae611a45342
 }
 
-//0=build settlement 1=end turn
 void mousePressed(){
   if(mouseOverButton(width*9/13-5,667,125,25)){ //means selected "Build Settlement" button
-<<<<<<< HEAD
-    //buttons[0]=!buttons[0]; 
-    colorBS=color(235,125,125);
-  }
-  //Dim:(width*11/13+15,667,70,25,15)== (x,y,w,h,radius)
-  else if (mouseOverButton(width*11/13+15,667,70,25)){ //means selected "End Turn" button 
-    //return 1;
-=======
     mouseClickButton=0;
     x=mouseX;
     y=mouseY;
@@ -232,7 +198,6 @@ void mousePressed(){
     players[currentPlayer].setPlayerTurn(false);
     currentPlayer= (currentPlayer+1)%(players.length);
     players[currentPlayer].setPlayerTurn(true);
->>>>>>> f7dff5f555476f2967d250d27eaeaae611a45342
   }
 }
 
@@ -322,57 +287,6 @@ void setTiles(){
     }
   }
 }
-  
-/*
-boolean check(Object e, int x, int y){
-  boolean checkThing=true;
-  String objectName=e.getClass().getSimpleName();
-  if (objectName.equals("Facilities")){
-    checkThing=checkFacilities(e,x,y); 
-  }
-  else if (objectName.equals("Roads")){
-    checkThing=checkRoads(e,x,y); 
-  }
-  return checkThing;
-}
-
-boolean checkFacilities(Object facility,int x, int y){
-  Object thing= cityMap[x][y];
-
-  int[] paintColor= facility.getColor();
-  int red=paintColor[0];
-  int green=paintColor[1];
-  int blue=paintColor[2];
->>>>>>> 0848e2663a798f805b677aa0d2ba58634fcf8518
-  String thingName=thing.getClass().getSimpleName(); //what is already there
-  String putThingName=facility.getClass().getSimpleName(); //what you want to put
-  String[] classes=new String[]{"Settlement","Cities","Facilities","Trading"};
-  if(thingName==null || Arrays.asList(classes).contains(thingName)){
-    return false;
-  }
-  else{
-    cityMap[x][y]= new Facility();
-    // how to get class of facility (facility.getClass() doesn't work)
-    return true;
-  }
-}
-    
-boolean checkRoads(Object road,int x, int y){
-  Object thing= roadMap[x][y];
-  String thingName=thing.getClass().getSimpleName(); //what is already there
-  String putThingName=road.getClass().getSimpleName(); //what you want to put
-  String[] classes=new String[]{"Roads"};
-  if (thingName==null || Arrays.asList(classes).contains(thingName)){
-    return false;
-  } 
-  else{
-    roadMap[x][y]= new Road();
-    // how to get class of road (road.getClass() doesn't work)
-    return true;
-    
-  }
-  
-  */
   
 
 
