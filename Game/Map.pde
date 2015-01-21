@@ -149,11 +149,11 @@ void draw(){
     colorET=color(255,0,0);
   } 
   
-  if (mouseClickButton==0 && players[currentPlayer].addSettlements()){
+  if (mouseClickButton==0 && players[currentPlayer].addSettlements()){//the addSettlements is temporary backup for buildSettlements; won't have enough time to code rest
     fill(players[currentPlayer].getPlayerColor());
-    rect(x,y,20,20,10);  
+    rect(x,y,25,20,10);  
   }
-  else if (mouseClickButton==1 && players[currentPlayer].addRoads()){
+  else if (mouseClickButton==1 && players[currentPlayer].addRoads()){//see comment above for addSettlements, and apply it for addRoads
     fill(players[currentPlayer].getPlayerColor());  
     rect(x,y,10,80,5);
   }
