@@ -17,7 +17,7 @@ Player(boolean turn,color playerColor){
   }
   
   Player(boolean turn){
-    setSupply(5,5,5,5,5);
+    setSupply(0,0,0,0,0);
     setPlayerTurn(turn);
     int randRed=r.nextInt(256);
     int randGreen=r.nextInt(256);
