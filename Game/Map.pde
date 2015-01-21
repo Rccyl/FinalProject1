@@ -12,6 +12,8 @@ protected Object[][] cityMap= new Object[11][11];
 protected Object[][] roadMap= new Object[11][21];
 protected Object thing;
 protected Player[] players;
+protected boolean[] buttons;
+protected color colorBS,colorBR,colorET;//edit so can change color
 
 void setup(){  
   size(1300,800);
@@ -49,6 +51,13 @@ void setup(){
     else{players[i]=new Player();} 
   }
   
+  buttons= new boolean[3];
+  for (int i=0; i<buttons.length;i++){
+    buttons[i]=false; 
+  }
+  
+
+  
 }
 
 void draw(){
@@ -73,19 +82,19 @@ void draw(){
   text("CATAN",width*9/13+40,100);
 
   //action buttons for player
-  fill(255,0,0);
+  fill(colorBS);
   rect(width*9/13-5,667,125,25,15);
   textSize(14);
   fill(255,255,255);
   text("Build Settlement",width*9/13+3,685);
     
-  fill(255,0,0);
+  fill(colorBR);
   rect(width*10/13+25,667,85,25,15);
   textSize(14);
   fill(255,255,255);
   text("Build Road",width*10/13+32,685);
     
-  fill(255,0,0);
+  fill(colorET);
   rect(width*11/13+15,667,70,25,15);
   textSize(14);
   fill(255,255,255);
@@ -122,37 +131,46 @@ void draw(){
     text("Brick: "+pSupply[4],width*10/13,((i*410)/(players.length-1))+190);
 
     text("Settlements "+players[i].getNumSettlements(),width*9/13,((i*410)/(players.length-1))+210);
-    //text("Cities "+players[i].getNumCities(),width*10/13,((i*410)/(players.length-1))+210);
-    text("Roads "+players[i].getNumRoads(),width*11/13,((i*410)/(players.length-1))+210);
+    text("Roads "+players[i].getNumRoads(),width*10/13,((i*410)/(players.length-1))+210);
     
     text("Victory Points "+players[i].getPlayerPoints(),width*9/13,((i*410)/(players.length-1))+230);
   }
-  /*
-  if (mousePressed){
-    //how to get the object to be placed
-    //for now, code below focuses on clicking buttons
-    int x= mouseX;
-    int y= mouseY;
+ 
+  //changes color of whatever button mouse if hovering over 
+  if(mouseOverButton(width*9/13-5,667,125,25)){ //means selected "Build Settlement" button
+    colorBS=color(235,125,125);
+  }
+  else if (mouseOverButton(width*10/13+25,667,85,25)){ //means selected "Build Roads" button
+    colorBR=color(235,125,125);
+  }
+  else if (mouseOverButton(width*11/13+15,667,70,25)){ //means selected "End Turn" button 
+    colorET=color(235,125,125);
+  }
+  else{  
+    colorBS=color(255,0,0);
+    colorBR=color(255,0,0);
+    colorET=color(255,0,0);
+  } 
 
-    int rX = 40;
-    int rY = 60;
-    int rW = 150;
-    int rH = 170;
-    if (mouseOverRect(rX, rY, rW, rH)) { 
-      //do stuff 
-    }
-    else { 
-      //do other stuff
-    }
+}
+
+//0=build settlement 1=end turn
+void mousePressed(){
+  //Dim:(width*9/13-5,667,125,25,15)== (x,y,w,h,radius)
+  if(mouseOverButton(width*9/13-5,667,125,25)){ //means selected "Build Settlement" button
+    //buttons[0]=!buttons[0]; 
+    colorBS=color(235,125,125);
   }
-  
-  
-  
-  from https://amnonp5.wordpress.com/2012/01/28/25-life-saving-tips-for-processing/
-  boolean mouseOverRect(int x, int y, int w, int h) {
-    return (mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h);
+  //Dim:(width*11/13+15,667,70,25,15)== (x,y,w,h,radius)
+  else if (mouseOverButton(width*11/13+15,667,70,25)){ //means selected "End Turn" button 
+    //return 1;
   }
-  */
+  //maybe one more for "Build Road"?
+}
+
+//from https://amnonp5.wordpress.com/2012/01/28/25-life-saving-tips-for-processing/
+boolean mouseOverButton(int x, int y, int w, int h) {
+  return (mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h);
 }
 
 void setBiomes(int lumber,int grain,int ore,int wool,int brick,int barren){
