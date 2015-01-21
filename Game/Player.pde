@@ -31,16 +31,11 @@ class Player{
     return structures.size(); 
   }
   
-<<<<<<< HEAD
   ArrayList<Settlement> getSettlementsAL(){
     return structures;
   }
   
   boolean addSettlements(){
-=======
-  //does it need check function?
-  void addSettlements(){
->>>>>>> e118c447781fe683ba57cb69004f4fcc01d7c12d
     //wood/lumber=0; grain/wheat=1; ore=2; wool/sheep=3; brick/brick=4; <--trying to compare with game rules 
     boolean hasResources= (supply[0]>0 && supply[1]>0 && supply[3]>0 && supply[4]>0);
     if (hasResources){
@@ -51,26 +46,6 @@ class Player{
     return hasResources;
   }
   
-/*  int getNumCities(){
-    return cities.size(); 
-  }
-
-  //does it need check function?
-  void addCities(int settlementIndex){
-    //wood/lumber=0; grain/wheat=1; ore=2; wool/sheep=3; brick/brick=4; <--trying to compare with game rules 
-    boolean hasResources= (supply[1]>1 && supply[2]>2);
-    if (hasResources){
-      int cityX=structures.get(settlementIndex).getX();
-      int cityY=structures.get(settlementIndex).getY();
-      //added coordinates since city has to be in same place
-      //cities.add(new City(cityX,cityY));
-      structures.remove(settlementIndex);
-      setSupply(supply[1]-2,supply[1],supply[2]-3,supply[3],supply[4]);
-      setPlayerPoints(getPlayerPoints()+2); 
-    }
-    //can return a message or just do nothing
-  }
-  */
   int getNumRoads(){
     return roads.size();
   }
