@@ -68,6 +68,9 @@ class Tile{
     fill(strokeColor);
     polygon(0, 0, 80, 6);
     popMatrix();
+    textSize(40);
+    fill(0);
+    text(roll,x-12,y+14);
   }
   
   void polygon(float x, float y, float radius, int npoints) {

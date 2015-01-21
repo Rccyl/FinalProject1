@@ -9,32 +9,15 @@ class Player{
   protected int[] supply= new int[5];
     // Lumber(0), Grain(1), Ore(2), Wool(3), Brick(4)
  protected boolean playerTurn;
- Random r=new Random();
-  
-  Player(boolean turn,color playerColor){
-    setSupply(0,0,0,0,0);
-    setPlayerTurn(turn);
-    setPlayerColor(playerColor);
-  }
   
   Player(boolean turn){
     setSupply(0,0,0,0,0);
     setPlayerTurn(turn);
-    int randRed=r.nextInt(256);
-    int randGreen=r.nextInt(256);
-    int randBlue=r.nextInt(256);
-    color randPlayerColor=color(randRed,randGreen,randBlue);
-    setPlayerColor(randPlayerColor);
   }
   
   Player(){
     setSupply(0,0,0,0,0);
     setPlayerTurn(false);
-    int randRed=r.nextInt(256);
-    int randGreen=r.nextInt(256);
-    int randBlue=r.nextInt(256);
-    color randPlayerColor=color(randRed,randGreen,randBlue);
-    setPlayerColor(randPlayerColor);
   }
   
   int getPlayerPoints(){
@@ -45,20 +28,8 @@ class Player{
     this.points=points; 
   }
   
-  color getPlayerColor(){
-    return playerColor; 
-  }
-  
-  void setPlayerColor(color playerColor){
-    this.playerColor=playerColor; 
-  }
-  
   int getNumSettlements(){
     return structures.size(); 
-  }
-  
-  ArrayList<Settlement> getSettlementsAL(){
-    return structures;
   }
   
   //does it need check function?
@@ -154,9 +125,11 @@ class Player{
       }else{
         coords=chooseVertex(x+16);
       }
+      int i = (int)coords[2];
+      int j = (int)coords[3];
       Settlement Alpha = new Settlement(coords[0],coords[1],playerColor);
-      cityMap[coords[2]][coords[3]]=Alpha;
-      Alpha.setProduction(coords[2],coords[3]);
+      cityMap[i][j]=Alpha;
+      Alpha.setProduction(i,j);
       settlements.add(Alpha);
       
             
