@@ -29,8 +29,6 @@ abstract class Building{
     void setColor(int red, int green, int blue){
 	strokeColor = color(red,green,blue);
     }
-
-    //abstract boolean check(int x, int y);
     
    float getX(){
      return x; 

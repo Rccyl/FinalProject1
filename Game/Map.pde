@@ -12,8 +12,8 @@ protected Object[][] cityMap= new Object[11][11];
 protected Object[][] roadMap= new Object[11][21];
 protected Object thing;
 protected Player[] players;
-protected boolean[] buttons;
-protected color colorBS,colorBR,colorET;//edit so can change color
+protected color colorBS,colorBR,colorET;
+protected int currentPlayer;
 
 void setup(){  
   size(1300,800);
@@ -50,18 +50,11 @@ void setup(){
     if (i==0){players[i]=new Player(true);}
     else{players[i]=new Player();} 
   }
-  
-  buttons= new boolean[3];
-  for (int i=0; i<buttons.length;i++){
-    buttons[i]=false; 
-  }
-  
-
-  
+  currentPlayer=0;
+    
 }
 
 void draw(){
-  //image(lumber,0,height/2,lumber.width/2,lumber.height/2);
   background(80,160,200);
   
   //title setup
@@ -113,12 +106,12 @@ void draw(){
     
     textSize(25);
     if (players[i].getPlayerTurn()){
-      fill(237,67,55);
-      //NOTE: FIGURE OUT HOW TO CHANGE PLAYERTURN ONCE PLAYER'S TURN IS OVER!!!
+      fill(players[i].getPlayerColor());
     }
     else{
       fill(0,0,0); 
-    }    
+    }  
+    
     //players actual stats
     text("Player "+(i+1)+" Stats:",width*9/13,((i*410)/(players.length-1))+150);
   
@@ -138,32 +131,34 @@ void draw(){
  
   //changes color of whatever button mouse if hovering over 
   if(mouseOverButton(width*9/13-5,667,125,25)){ //means selected "Build Settlement" button
-    colorBS=color(235,125,125);
+    colorBS=color(255,51,51);
   }
   else if (mouseOverButton(width*10/13+25,667,85,25)){ //means selected "Build Roads" button
-    colorBR=color(235,125,125);
+    colorBR=color(255,51,51);
   }
   else if (mouseOverButton(width*11/13+15,667,70,25)){ //means selected "End Turn" button 
-    colorET=color(235,125,125);
+    colorET=color(255,51,51);
   }
   else{  
     colorBS=color(255,0,0);
     colorBR=color(255,0,0);
     colorET=color(255,0,0);
   } 
-
 }
 
-//0=build settlement 1=end turn
 void mousePressed(){
   //Dim:(width*9/13-5,667,125,25,15)== (x,y,w,h,radius)
   if(mouseOverButton(width*9/13-5,667,125,25)){ //means selected "Build Settlement" button
-    //buttons[0]=!buttons[0]; 
-    colorBS=color(235,125,125);
+    players[currentPlayer].buildSettlement();
+  }
+  else if (mouseOverButton(width*10/13+25,667,85,25)){ //means selected "Build Roads" button
+    
   }
   //Dim:(width*11/13+15,667,70,25,15)== (x,y,w,h,radius)
   else if (mouseOverButton(width*11/13+15,667,70,25)){ //means selected "End Turn" button 
-    //return 1;
+    players[currentPlayer].setPlayerTurn(false);
+    currentPlayer= (currentPlayer+1)%(players.length);
+    players[currentPlayer].setPlayerTurn(true);
   }
   //maybe one more for "Build Road"?
 }
@@ -235,57 +230,3 @@ void setTiles(){
     }
   }
 }
-  
-/*
-boolean check(Object e, int x, int y){
-  boolean checkThing=true;
-  String objectName=e.getClass().getSimpleName();
-  if (objectName.equals("Facilities")){
-    checkThing=checkFacilities(e,x,y); 
-  }
-  else if (objectName.equals("Roads")){
-    checkThing=checkRoads(e,x,y); 
-  }
-  return checkThing;
-}
-
-boolean checkFacilities(Object facility,int x, int y){
-  Object thing= cityMap[x][y];
-
-  int[] paintColor= facility.getColor();
-  int red=paintColor[0];
-  int green=paintColor[1];
-  int blue=paintColor[2];
->>>>>>> 0848e2663a798f805b677aa0d2ba58634fcf8518
-  String thingName=thing.getClass().getSimpleName(); //what is already there
-  String putThingName=facility.getClass().getSimpleName(); //what you want to put
-  String[] classes=new String[]{"Settlement","Cities","Facilities","Trading"};
-  if(thingName==null || Arrays.asList(classes).contains(thingName)){
-    return false;
-  }
-  else{
-    cityMap[x][y]= new Facility();
-    // how to get class of facility (facility.getClass() doesn't work)
-    return true;
-  }
-}
-    
-boolean checkRoads(Object road,int x, int y){
-  Object thing= roadMap[x][y];
-  String thingName=thing.getClass().getSimpleName(); //what is already there
-  String putThingName=road.getClass().getSimpleName(); //what you want to put
-  String[] classes=new String[]{"Roads"};
-  if (thingName==null || Arrays.asList(classes).contains(thingName)){
-    return false;
-  } 
-  else{
-    roadMap[x][y]= new Road();
-    // how to get class of road (road.getClass() doesn't work)
-    return true;
-    
-  }
-  
-  */
-  
-
-
