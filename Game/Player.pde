@@ -30,6 +30,11 @@ class Player{
   Player(){
     setSupply(0,0,0,0,0);
     setPlayerTurn(false);
+    int randRed=r.nextInt(256);
+    int randGreen=r.nextInt(256);
+    int randBlue=r.nextInt(256);
+    color randPlayerColor=color(randRed,randGreen,randBlue);
+    setPlayerColor(randPlayerColor);
   }
   
   int getPlayerPoints(){

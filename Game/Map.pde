@@ -106,7 +106,7 @@ void draw(){
     
     textSize(25);
     if (players[i].getPlayerTurn()){
-      fill(237,67,55);
+      fill(players[i].getPlayerColor());
     }
     else{
       fill(0,0,0); 
