@@ -13,10 +13,10 @@ protected Object[][] roadMap= new Object[11][21];
 protected Object thing;
 protected Player[] players;
 protected boolean[] buttons;
-protected color colorBS,colorBR,colorET;//edit so can change color
 protected color colorBS,colorBR,colorET;
 protected int currentPlayer;
 protected int mouseClickButton=-1; //Works only for buttons.
+protected int numClicks=0;
 int x; //yes for mouse, but easy way to keep track across methods
 int y;
 
@@ -156,11 +156,11 @@ void draw(){
   } 
 
   //Dealing with Button Actions
-  if (mouseClickButton==0 && players[currentPlayer].addSettlements()){//the addSettlements is temporary backup for buildSettlements; won't have enough time to code rest
+  if (mouseClickButton==0){
     fill(players[currentPlayer].getPlayerColor());
     rect(x,y,25,20,10);  
   }
-  else if (mouseClickButton==1 && players[currentPlayer].addRoads()){//see comment above for addSettlements, and apply it for addRoads
+  else if (mouseClickButton==1){
     fill(players[currentPlayer].getPlayerColor());  
     rect(x,y,10,80,5);
   }

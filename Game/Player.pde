@@ -8,15 +8,32 @@ class Player{
   protected int[] supply= new int[5];
     // Lumber(0), Grain(1), Ore(2), Wool(3), Brick(4)
  protected boolean playerTurn;
+ Random r= new Random();
   
-  Player(boolean turn){
+Player(boolean turn,color playerColor){
     setSupply(0,0,0,0,0);
     setPlayerTurn(turn);
+    setPlayerColor(playerColor);
+  }
+  
+  Player(boolean turn){
+    setSupply(5,5,5,5,5);
+    setPlayerTurn(turn);
+    int randRed=r.nextInt(256);
+    int randGreen=r.nextInt(256);
+    int randBlue=r.nextInt(256);
+    color randPlayerColor=color(randRed,randGreen,randBlue);
+    setPlayerColor(randPlayerColor);
   }
   
   Player(){
     setSupply(0,0,0,0,0);
     setPlayerTurn(false);
+    int randRed=r.nextInt(256);
+    int randGreen=r.nextInt(256);
+    int randBlue=r.nextInt(256);
+    color randPlayerColor=color(randRed,randGreen,randBlue);
+    setPlayerColor(randPlayerColor);
   }
   
   int getPlayerPoints(){
@@ -25,6 +42,14 @@ class Player{
   
   void setPlayerPoints(int points){
     this.points=points; 
+  }
+  
+  color getPlayerColor(){
+    return playerColor; 
+  }
+  
+  void setPlayerColor(color playerColor){
+    this.playerColor=playerColor; 
   }
   
   int getNumSettlements(){
