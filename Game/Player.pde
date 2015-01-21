@@ -8,32 +8,15 @@ class Player{
   protected int[] supply= new int[5];
     // Lumber(0), Grain(1), Ore(2), Wool(3), Brick(4)
  protected boolean playerTurn;
- Random r=new Random();
-  
-  Player(boolean turn,color playerColor){
-    setSupply(0,0,0,0,0);
-    setPlayerTurn(turn);
-    setPlayerColor(playerColor);
-  }
   
   Player(boolean turn){
     setSupply(0,0,0,0,0);
     setPlayerTurn(turn);
-    int randRed=r.nextInt(256);
-    int randGreen=r.nextInt(256);
-    int randBlue=r.nextInt(256);
-    color randPlayerColor=color(randRed,randGreen,randBlue);
-    setPlayerColor(randPlayerColor);
   }
   
   Player(){
     setSupply(0,0,0,0,0);
     setPlayerTurn(false);
-    int randRed=r.nextInt(256);
-    int randGreen=r.nextInt(256);
-    int randBlue=r.nextInt(256);
-    color randPlayerColor=color(randRed,randGreen,randBlue);
-    setPlayerColor(randPlayerColor);
   }
   
   int getPlayerPoints(){
@@ -44,23 +27,20 @@ class Player{
     this.points=points; 
   }
   
-  color getPlayerColor(){
-    return playerColor; 
-  }
-  
-  void setPlayerColor(color playerColor){
-    this.playerColor=playerColor; 
-  }
-  
   int getNumSettlements(){
     return structures.size(); 
   }
   
+<<<<<<< HEAD
   ArrayList<Settlement> getSettlementsAL(){
     return structures;
   }
   
   boolean addSettlements(){
+=======
+  //does it need check function?
+  void addSettlements(){
+>>>>>>> e118c447781fe683ba57cb69004f4fcc01d7c12d
     //wood/lumber=0; grain/wheat=1; ore=2; wool/sheep=3; brick/brick=4; <--trying to compare with game rules 
     boolean hasResources= (supply[0]>0 && supply[1]>0 && supply[3]>0 && supply[4]>0);
     if (hasResources){
@@ -71,6 +51,26 @@ class Player{
     return hasResources;
   }
   
+/*  int getNumCities(){
+    return cities.size(); 
+  }
+
+  //does it need check function?
+  void addCities(int settlementIndex){
+    //wood/lumber=0; grain/wheat=1; ore=2; wool/sheep=3; brick/brick=4; <--trying to compare with game rules 
+    boolean hasResources= (supply[1]>1 && supply[2]>2);
+    if (hasResources){
+      int cityX=structures.get(settlementIndex).getX();
+      int cityY=structures.get(settlementIndex).getY();
+      //added coordinates since city has to be in same place
+      //cities.add(new City(cityX,cityY));
+      structures.remove(settlementIndex);
+      setSupply(supply[1]-2,supply[1],supply[2]-3,supply[3],supply[4]);
+      setPlayerPoints(getPlayerPoints()+2); 
+    }
+    //can return a message or just do nothing
+  }
+  */
   int getNumRoads(){
     return roads.size();
   }
@@ -129,8 +129,12 @@ class Player{
       }else{
         coords=chooseVertex(x+16);
       }
+      int i = (int)coords[2];
+      int j = (int)coords[3];
       Settlement Alpha = new Settlement(coords[0],coords[1],playerColor);
-      
+      cityMap[i][j]=Alpha;
+      Alpha.setProduction(i,j);
+      settlements.add(Alpha);
       
             
     }
