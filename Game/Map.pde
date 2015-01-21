@@ -14,6 +14,10 @@ protected Object thing;
 protected Player[] players;
 protected color colorBS,colorBR,colorET;
 protected int currentPlayer;
+protected int mouseClickButton=-1; //Works only for buttons.
+protected int numClicks=0;
+int x; //yes for mouse, but easy way to keep track across methods
+int y;
 
 void setup(){  
   size(1300,800);
@@ -57,7 +61,7 @@ void setup(){
 void draw(){
   background(80,160,200);
   
-  //title setup
+  //Title Setup
   textSize(20);
   fill(255,215,0);
   text("THE",width*9/13+40,50);
@@ -74,7 +78,7 @@ void draw(){
   fill(255,215,0);
   text("CATAN",width*9/13+40,100);
 
-  //action buttons for player
+  //Action Buttons for Player
   fill(colorBS);
   rect(width*9/13-5,667,125,25,15);
   textSize(14);
@@ -112,7 +116,7 @@ void draw(){
       fill(0,0,0); 
     }  
     
-    //players actual stats
+    //Player's Stats
     text("Player "+(i+1)+" Stats:",width*9/13,((i*410)/(players.length-1))+150);
   
     int[] pSupply=players[i].getSupply();
@@ -129,14 +133,14 @@ void draw(){
     text("Victory Points "+players[i].getPlayerPoints(),width*9/13,((i*410)/(players.length-1))+230);
   }
  
-  //changes color of whatever button mouse if hovering over 
-  if(mouseOverButton(width*9/13-5,667,125,25)){ //means selected "Build Settlement" button
+  //Indicates button mouse is hovering over
+  if(mouseOverButton(width*9/13-5,667,125,25)){ //means over "Build Settlement" button
     colorBS=color(255,51,51);
   }
-  else if (mouseOverButton(width*10/13+25,667,85,25)){ //means selected "Build Roads" button
+  else if (mouseOverButton(width*10/13+25,667,85,25)){ //means over "Build Roads" button
     colorBR=color(255,51,51);
   }
-  else if (mouseOverButton(width*11/13+15,667,70,25)){ //means selected "End Turn" button 
+  else if (mouseOverButton(width*11/13+15,667,70,25)){ //means over "End Turn" button 
     colorET=color(255,51,51);
   }
   else{  
@@ -144,26 +148,51 @@ void draw(){
     colorBR=color(255,0,0);
     colorET=color(255,0,0);
   } 
+  
+  if (mouseClickButton==0 && players[currentPlayer].addSettlements()){
+    fill(players[currentPlayer].getPlayerColor());
+    rect(x,y,20,20,10);  
+  }
+  else if (mouseClickButton==1 && players[currentPlayer].addRoads()){
+    fill(players[currentPlayer].getPlayerColor());  
+    rect(x,y,10,80,5);
+  }
+  do{
+    if (mousePressed){
+      int xDistance=mouseX-x;
+      int yDistance=mouseY-y;
+      if (Math.abs(xDistance)>0 || Math.abs(yDistance)>0){
+        x=mouseX;
+        y=mouseY;  
+      }
+      numClicks=numClicks-1;
+    }
+  }while(numClicks>0);
 }
 
 void mousePressed(){
-  //Dim:(width*9/13-5,667,125,25,15)== (x,y,w,h,radius)
   if(mouseOverButton(width*9/13-5,667,125,25)){ //means selected "Build Settlement" button
-    players[currentPlayer].buildSettlement();
+    mouseClickButton=0;
+    x=mouseX;
+    y=mouseY;
+    numClicks=1;
+    players[currentPlayer].buildSettlement();    
   }
   else if (mouseOverButton(width*10/13+25,667,85,25)){ //means selected "Build Roads" button
-    
+    mouseClickButton=1;
+    x=mouseX;
+    y=mouseY;
+    numClicks=1;
   }
-  //Dim:(width*11/13+15,667,70,25,15)== (x,y,w,h,radius)
-  else if (mouseOverButton(width*11/13+15,667,70,25)){ //means selected "End Turn" button 
+  else if (mouseOverButton(width*11/13+15,667,70,25)){ //means selected "End Turn" button
+    mouseClickButton=2;
     players[currentPlayer].setPlayerTurn(false);
     currentPlayer= (currentPlayer+1)%(players.length);
     players[currentPlayer].setPlayerTurn(true);
   }
-  //maybe one more for "Build Road"?
 }
 
-//from https://amnonp5.wordpress.com/2012/01/28/25-life-saving-tips-for-processing/
+//CREDIT: https://amnonp5.wordpress.com/2012/01/28/25-life-saving-tips-for-processing/
 boolean mouseOverButton(int x, int y, int w, int h) {
   return (mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h);
 }
