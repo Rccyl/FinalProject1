@@ -204,12 +204,14 @@ void setTiles(){
     int j=abs(((5-i)/2)+1);
     if (i==9){
       for(int t=9;t<-1*((5-i)/2)+5;t++){
-        cityMap[1][j]=tiles[t];
+        cityMap[i][j]=tiles[t];
+        tiles[t].setCMXY(i,j);
         j+=2;
       }
     }else {
       for(int t=9;t<-1*((5-i)/2)+5;t++){
-        cityMap[1][j]=tiles[t];
+        cityMap[i][j]=tiles[t];
+        tiles[t].setCMXY(i,j);
         j+=2;
       }
     }
