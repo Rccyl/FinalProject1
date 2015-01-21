@@ -1,4 +1,3 @@
-
 class Game_Files{
     
     protected String[] productionNames= new String[]{"Lumber","Grain","Ore","Wool","Brick","Barren"};
@@ -6,47 +5,7 @@ class Game_Files{
  
     Game_Files(){
     }
-          /*
-    void composition(int lumber,int grain,int ore,int wool,int brick,int barren){
-        for(int i=0;i<tileArray.length;i++){
-            for(int j=lumber;j>0;j--){
-               tileArray[i]=0;
-               i++;
-            }
-            for(int j=grain;j>0;j--){
-               tileArray[i]=1;
-               i++;
-            }
-            for(int j=ore;j>0;j--){
-               tileArray[i]=2;
-               i++;
-            }
-            for(int j=wool;j>0;j--){
-               tileArray[i]=3;
-               i++;
-            }
-            for(int j=brick;j>0;j--){
-               tileArray[i]=4;
-               i++;
-            }
-            for(int j=barren;j>0;j--){
-               tileArray[i]=5;
-               i++;
-            }
-        }
-    }
-              
-    
-    void setTiles(int rows,int cols){
-        for(int t=0;t<tileArray.length;t++){
-            for(int i=1;i<11;i+=2){
-              int j=abs(((5-i)/2)+1);
-              cityMap[i][j]=tileArray[t];
-            }
-        }
-    }
-    
-
+        /*
     boolean check(Object e, int x, int y){
         boolean checkThing=true;
         String objectName=e.getClass().getSimpleName();

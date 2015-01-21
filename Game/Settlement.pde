@@ -1,7 +1,7 @@
 class Settlement extends Building{
 
   protected int[]chance = new int[3];
-  protected int[]production = new int[3];
+  protected ArrayList<int>production = new ArrayList();
  
   Settlement(float x,float y,color player){
     setCost(1,1,0,0,0);
@@ -13,6 +13,8 @@ class Settlement extends Building{
   Settlement(){
   }
   
+  void setProduction(int x,int y){
+    cityMap[x][y]
     
   void display(){
     pushMatrix();

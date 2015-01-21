@@ -44,6 +44,26 @@ class Player{
     //can return a message or just do nothing
   }
   
+/*  int getNumCities(){
+    return cities.size(); 
+  }
+
+  //does it need check function?
+  void addCities(int settlementIndex){
+    //wood/lumber=0; grain/wheat=1; ore=2; wool/sheep=3; brick/brick=4; <--trying to compare with game rules 
+    boolean hasResources= (supply[1]>1 && supply[2]>2);
+    if (hasResources){
+      int cityX=structures.get(settlementIndex).getX();
+      int cityY=structures.get(settlementIndex).getY();
+      //added coordinates since city has to be in same place
+      //cities.add(new City(cityX,cityY));
+      structures.remove(settlementIndex);
+      setSupply(supply[1]-2,supply[1],supply[2]-3,supply[3],supply[4]);
+      setPlayerPoints(getPlayerPoints()+2); 
+    }
+    //can return a message or just do nothing
+  }
+  */
   int getNumRoads(){
     return roads.size();
   }
@@ -106,7 +126,9 @@ class Player{
         coords=chooseVertex(x+16);
       }
       Settlement Alpha = new Settlement(coords[0],coords[1],playerColor);
-      
+      cityMap[coords[2]][coords[3]]=Alpha;
+      Alpha.setProduction(coords[2],coords[3]);
+      settlements.add(Alpha);
       
             
     }
