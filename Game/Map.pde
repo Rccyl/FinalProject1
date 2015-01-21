@@ -17,7 +17,6 @@ protected color colorBS,colorBR,colorET;//edit so can change color
 protected color colorBS,colorBR,colorET;
 protected int currentPlayer;
 protected int mouseClickButton=-1; //Works only for buttons.
-protected int numClicks=0;
 int x; //yes for mouse, but easy way to keep track across methods
 int y;
 
@@ -117,8 +116,7 @@ void draw(){
     
     textSize(25);
     if (players[i].getPlayerTurn()){
-      fill(237,67,55);
-      //NOTE: FIGURE OUT HOW TO CHANGE PLAYERTURN ONCE PLAYER'S TURN IS OVER!!!
+      fill(players[i].getPlayerColor());
     }
     else{
       fill(0,0,0); 
