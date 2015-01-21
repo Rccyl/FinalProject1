@@ -5,6 +5,11 @@ Settlers Of Catan
 
 2015-01-20
     -removed cities and facilities, working with only settlements
+    -button functionality added
+        -can build (sort of) a settlement
+        -can build (sort of) a road
+        -can end player turn (definitely so) and move from one player to next
+    -players now have their own colors so everything they "own" (settlements, roads) will also have the same color
 
 2015-01-19:
     -player actions buttons position adjusted
